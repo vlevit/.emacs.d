@@ -54,9 +54,12 @@
 
 ;; Bookmarks
 
+(defvar my-ido-bm-map (make-sparse-keymap))
+(defvar my-sr-bm-map (make-sparse-keymap))
+
 (defmacro my-bm (keys dir)
   (list 'progn
-    `(define-key ido-file-dir-completion-map ,keys
+    `(define-key my-ido-bm-map ,keys
        (lambda ()
          (interactive)
          (ido-set-current-directory ,dir)
@@ -64,21 +67,30 @@
                ido-text-init ido-text
                ido-rotate-temp t)
          (exit-minibuffer)))
-    `(define-key sr-mode-map ,keys
+    `(define-key my-sr-bm-map ,keys
        (lambda () (interactive) (sr-goto-dir ,dir)))))
 
 (if (or (my-home) (my-book))
     (progn
-      (my-bm (kbd "`p") "/tmp")
-      (my-bm (kbd "`P") "/var/tmp")
-      (my-bm (kbd "`m") "~/Music")
-      (my-bm (kbd "`v") "~/Video")
-      (my-bm (kbd "`j") "~/projects")
-      (my-bm (kbd "`~") "~")
-      (my-bm (kbd "`h") "~")
-      (my-bm (kbd "`e") "/media")
-      (my-bm (kbd "`a") "/media/MAXTORUNCLE")
-      (my-bm (kbd "`z") "/media/zbox")))
+      (my-bm (kbd "p") "/tmp")
+      (my-bm (kbd "P") "/var/tmp")
+      (my-bm (kbd "m") "~/Music")
+      (my-bm (kbd "v") "~/Video")
+      (my-bm (kbd "j") "~/projects")
+      (my-bm (kbd "w") "~/work")
+      (my-bm (kbd "~") "~")
+      (my-bm (kbd "h") "~")
+      (my-bm (kbd "e") "/media")
+      (my-bm (kbd "a") "/media/MAXTORUNCLE")
+      (my-bm (kbd "z") "/media/zbox")))
+
+(defun my-ido-bm-keys ()
+  "Add bookmark keybindings for ido."
+  (define-key ido-file-dir-completion-map "`" my-ido-bm-map))
+(add-hook 'ido-setup-hook 'my-ido-bm-keys)
+
+(define-key sr-mode-map "`" my-sr-bm-map)
+
 
 (global-set-key (kbd "C-S-o") 'sunrise-cd)
 (provide 'my-sunrise-commander)
