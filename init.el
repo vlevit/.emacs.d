@@ -68,6 +68,7 @@
 (require 'my-occur-mode)
 (require 'my-buffer-stack)
 (require 'my-winner-mode)
+(require 'ido-other-window)
 (require 'my-highlight-symbol)
 (require 'my-ido)                       ; recentf, imenu
 (require 'my-anything)
