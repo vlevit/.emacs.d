@@ -7,7 +7,7 @@
              '("ru-yeyo" "[а-яА-Яё]" "[^а-яА-Яё]" "" t ("-d" "ru-yeyo") nil utf-8))
 
 (defun my-flyspell-mode-hook ()
-  (unless (eq major-mode 'html-mode)
+  (unless (derived-mode-p 'sgml-mode)
     (flyspell-mode 1)
     (ispell-change-dictionary "ru-yeyo")
     (flyspell-buffer)))
@@ -21,7 +21,7 @@
 (add-hook 'markdown-mode-hook 'my-flyspell-mode-hook)
 
 (add-hook 'prog-mode-hook 'my-flyspell-prog-mode-hook)
-(add-hook 'html-mode-hook 'my-flyspell-prog-mode-hook)
+(add-hook 'sgml-mode-hook 'my-flyspell-prog-mode-hook)
 
 ;; http://sen-emacs-conf.googlecode.com/svn-history/r5/trunk/sen-defuns.el
 
