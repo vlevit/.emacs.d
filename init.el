@@ -63,7 +63,7 @@
 (require 'my-flymake)
 (require 'my-auto-complete)
 (require 'my-dired)
-(require 'my-autopair)
+(require 'my-smartparens)
 (require 'my-yasnippet)
 (require 'my-multiple-cursors)
 (require 'my-occur-mode)
