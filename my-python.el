@@ -16,6 +16,7 @@
   (define-key python-mode-map (kbd "M-g M-t") 'my-show-tags)
   (define-key python-mode-map (kbd "M-n") 'python-nav-forward-statement)
   (define-key python-mode-map (kbd "M-p") 'python-nav-backward-statement)
+  (define-key python-mode-map (kbd "M-e") 'python-nav-forward-sexp)
   (whitespace-mode 1)
   (fci-mode 1))
   ;; (my-highlight-indetation))
