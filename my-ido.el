@@ -31,6 +31,8 @@
 
 
 (require 'imenu)
+
+;; http://zahardzhan.github.io/2010/emacs-starter-kit-the-program.html
 (defun ido-imenu ()
   "Update the imenu index and then use ido to select a symbol to navigate to.
    Symbols matching the text at point are put first in the completion list."
