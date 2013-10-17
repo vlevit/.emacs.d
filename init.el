@@ -25,6 +25,7 @@
 (setq word-wrap t)
 (setq fill-column 70)
 (set-face-attribute 'default nil :height 105) ; set font size to 10.5pt
+(setq comment-style 'multi-line)
 (recentf-mode 1)                              ; recent files
 (setq recentf-max-saved-items 100)            ; save last 100 recent files
 (setq recentf-keep '(file-remote-p file-readable-p))
