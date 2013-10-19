@@ -85,6 +85,7 @@
 (require 'my-c-mode)
 (require 'my-html)
 (require 'my-css)
+(require 'my-js)
 (require 'my-org-mode)
 (require 'my-markdown)
 (require 'my-wiki)
