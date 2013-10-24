@@ -9,19 +9,27 @@
         backward-sexp
         cua-copy-region
         cua-delete-region
+        cua-exchange-point-and-mark
         cua-paste
         cua-paste-pop
         dabbrev-expand
+        delete-indentation
         forward-sentence
         forward-sexp
         highlight-symbol-next
+        indent-for-tab-command
         iy-go-to-char
         iy-go-to-char-backward
+        jedi:dot-complete
         mark-whole-line
         org-self-insert-command
+        python-indent-dedent-line-backspace
+        python-indent-electric-colon
         sgml-close-tag
         sgml-slash
+        sp--self-insert-command
         tab-to-tab-stop
+        transpose-words
         wgrep-finish-edit
         ))
 
@@ -30,7 +38,8 @@
         cua-cut-region
         dired-copy-filename-as-kill
         eval-expression
-        smex
-        yaml-electric-dash-and-dot
         my-create-fake-cursor
+        smex
+        toggle-truncate-lines
+        yaml-electric-dash-and-dot
         ))
