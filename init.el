@@ -95,6 +95,7 @@
 (require 'my-antiword)
 (require 'my-git)
 (require 'my-vlblog)
+(require 'my-util)
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq delete-by-moving-to-trash t)
