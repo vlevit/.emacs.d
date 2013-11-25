@@ -79,6 +79,7 @@
 (require 'my-multiple-async-shell-commands)
 (require 'my-fold-dwim)                 ; fold-dwim
 (require 'my-man)
+(require 'my-diff)
 (require 'my-sudo-edit)
 
 (require 'my-python)                    ; flymake, jedi
