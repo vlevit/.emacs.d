@@ -74,6 +74,7 @@
 (require 'my-highlight-symbol)
 (require 'my-ido)                       ; recentf, imenu
 (require 'my-anything)
+(require 'my-visual-regexp)
 (require 'my-sunrise-commander)         ; ido
 (require 'my-shell)                     ; shell-command, bash-completion
 (require 'my-multiple-async-shell-commands)
