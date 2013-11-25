@@ -1,8 +1,10 @@
 (ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
 
 (setq ido-max-directory-size 100000) ;; 30 KB -- default
-
-(ido-everywhere 1)
 
 (setq ido-default-file-method 'selected-window
       ido-enable-flex-matching t
