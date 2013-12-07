@@ -80,6 +80,8 @@
       (my-bm (kbd "w") "~/work")
       (my-bm (kbd "~") "~")
       (my-bm (kbd "h") "~")
+      (my-bm (kbd "d") "~/Docs")
+      (my-bm (kbd "t") "~/Text")
       (my-bm (kbd "e") "/media")
       (my-bm (kbd "a") "/media/MAXTORUNCLE")
       (my-bm (kbd "z") "/media/zbox")))
