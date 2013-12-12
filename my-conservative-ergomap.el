@@ -1,5 +1,6 @@
 (defvar ergomap-keymap (make-sparse-keymap) "Ergomap keymap")
 
+(define-key ergomap-keymap (kbd "<escape>") 'keyboard-escape-quit)
 (define-key ergomap-keymap (kbd "<f2>") 'save-buffer)
 (define-key ergomap-keymap (kbd "<S-f2>") 'kill-this-buffer)
 
