@@ -27,8 +27,10 @@
         python-indent-electric-colon
         sgml-close-tag
         sgml-slash
+        sp--cua-replace-region
         sp--self-insert-command
         tab-to-tab-stop
+        transpose-symbols
         transpose-words
         wgrep-finish-edit
         ))
