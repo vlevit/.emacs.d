@@ -1,3 +1,6 @@
+(setq key-chord-two-keys-delay 0.2)
+(setq key-chord-one-key-delay 0.3)
+
 (defun key-seq-define-global (keys command)
   "Like key-chord-define-global but the order of keys matters."
   (interactive "sSet key chord globally (2 keys): \nCSet chord \"%s\" to command: ")
