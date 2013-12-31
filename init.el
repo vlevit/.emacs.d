@@ -24,7 +24,6 @@
 ; (set-default-font "DejaVu Sans Mono")         ; set default font to DejaVu Sans Mono
 (setq word-wrap t)
 (setq fill-column 70)
-(set-face-attribute 'default nil :height 105) ; set font size to 10.5pt
 (setq comment-style 'multi-line)
 (recentf-mode 1)                              ; recent files
 (setq recentf-max-saved-items 100)            ; save last 100 recent files
@@ -35,6 +34,7 @@
 (setq split-width-threshold 120)
 
 (require 'my-whereami)                  ; my-home and my-at-work
+(require 'my-face)
 (require 'my-auto-compile)              ; compile my-*el on save
 (require 'my-package)
 (require 'my-hippie-expand)
