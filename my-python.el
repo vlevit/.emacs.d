@@ -57,12 +57,19 @@
 (setq jedi:server-command (list "python2" jedi:server-script))
 
 (defun my-jedi-server-setup ()
-  (let ((ve-vlevit-org (expand-file-name "~/virtualenvs/vlevit.org/"))
-        (vlevit-org-dir (expand-file-name "~/projects/vlevit.org/")))
+  (let ((projects
+         '(("~/projects/vlevit.org/" . "~/virtualenvs/vlevit.org/")
+           ("~/work/josh/prettytracker/" . "~/virtualenvs/prettytracker/")
+           ("~/work/josh/dash.cm/" . "~/virtualenvs/dash.cm/"))))
     (let ((cmds (list "python2" jedi:server-script))
-          (args (cond
-                 ((string-prefix-p vlevit-org-dir (buffer-file-name))
-                  (message "vlevit.org project!!!") (list "--virtual-env" ve-vlevit-org)))))
+          (args
+           (let ((project-cons
+                  (cl-find-if
+                   '(lambda (project-cons)
+                      (string-prefix-p (expand-file-name (car project-cons)) (buffer-file-name)))
+                   projects)))
+             (if project-cons
+                 (list "--virtual-env" (expand-file-name (cdr project-cons)))))))
       (when cmds (set (make-local-variable 'jedi:server-command) cmds))
       (when args (set (make-local-variable 'jedi:server-args) args)))))
 
