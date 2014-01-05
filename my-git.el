@@ -5,5 +5,9 @@
 
 (setq magit-diff-refine-hunk t)
 
+(define-key magit-mode-map (kbd "<S-return>")
+  '(lambda () (interactive) (magit-visit-item 1) (other-window -1)))
+(define-key magit-mode-map (kbd "M-RET")
+  '(lambda () (interactive) (magit-visit-item 1)))
 
 (provide 'my-git)
