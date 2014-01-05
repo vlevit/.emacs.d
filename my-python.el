@@ -53,6 +53,7 @@
   (add-to-list 'flymake-allowed-file-name-masks
                '("xatk" flymake-pyflakes-init)))
 
+(add-to-list 'load-path "~/.emacs.d/src/jedi")
 (require 'jedi)
 (setq jedi:server-command (list "python2" jedi:server-script))
 
