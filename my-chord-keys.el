@@ -28,6 +28,9 @@
 (key-seq-define-global "qf" 'ido-find-file)
 (key-seq-define-global "qh" 'find-file-in-repository)
 (key-seq-define-global "qd" 'sunrise-cd)
+(key-seq-define-global "qg" 'magit-status)
+(key-seq-define-global "qs" 'ido-imenu)
+(key-seq-define-global "qb" 'ido-switch-buffer)
 
 (key-chord-mode 1)
 
