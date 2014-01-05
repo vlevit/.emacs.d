@@ -1,9 +1,5 @@
 (ido-mode 1)
 (ido-everywhere 1)
-(flx-ido-mode 1)
-(setq flx-ido-threshhold 1000) ;; do not slowdown smex
-;; disable ido faces to see flx highlights.
-;; (setq ido-use-faces nil)
 
 (setq ido-max-directory-size 100000) ;; 30 KB -- default
 
