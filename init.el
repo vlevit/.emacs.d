@@ -1,6 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d")
 
 (require 'my-globals)
+(require 'my-scroll)                    ; conservative scrolling
 (require 'my-whereami)                  ; my-home and my-at-work
 (require 'my-face)
 (require 'my-auto-compile)              ; compile my-*el on save
