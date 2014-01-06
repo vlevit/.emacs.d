@@ -102,21 +102,22 @@
 (defun ido-disable-line-truncation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-truncation)
 
+(defun ido-go-dir (dir)
+  (if (not (string= ido-text ""))
+      (self-insert-command 1)
+    (ido-set-current-directory dir)
+    (setq ido-exit 'refresh
+          ido-text-init ido-text
+          ido-rotate-temp t)
+    (exit-minibuffer)))
+
 (defun ido-go-home ()
   (interactive)
-  (ido-set-current-home)
-  (setq ido-exit 'refresh
-        ido-text-init ido-text
-        ido-rotate-temp t)
-  (exit-minibuffer))
+  (ido-go-dir (expand-file-name "~/")))
 
 (defun ido-go-root ()
   (interactive)
-  (ido-set-current-directory "/")
-  (setq ido-exit 'refresh
-        ido-text-init ido-text
-        ido-rotate-temp t)
-  (exit-minibuffer))
+  (ido-go-dir "/"))
 
 (defun ido-define-keys () ;; C-n/p is more intuitive in vertical layout
   (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
