@@ -32,6 +32,7 @@
 ; (setq x-alt-keysym 'meta)
 (setq sentence-end-double-space nil)
 (setq split-width-threshold 120)
+(setq-default require-final-newline t)
 
 (require 'my-whereami)                  ; my-home and my-at-work
 (require 'my-face)
