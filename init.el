@@ -57,6 +57,7 @@
 (require 'my-html)
 (require 'my-css)
 (require 'my-js)
+(require 'my-coffee)
 (require 'my-org-mode)
 (require 'my-markdown)
 (require 'my-wiki)
