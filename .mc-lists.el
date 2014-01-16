@@ -7,6 +7,7 @@
         autopair-insert-or-skip-quote
         autopair-skip-close-maybe
         backward-sexp
+        coffee-dedent-line-backspace
         cua-copy-region
         cua-delete-region
         cua-exchange-point-and-mark
@@ -41,6 +42,7 @@
         dired-copy-filename-as-kill
         eval-expression
         my-create-fake-cursor
+        overwrite-mode
         smex
         toggle-truncate-lines
         yaml-electric-dash-and-dot
