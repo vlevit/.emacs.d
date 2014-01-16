@@ -32,6 +32,8 @@
 (require 'imenu)
 
 ;; http://zahardzhan.github.io/2010/emacs-starter-kit-the-program.html
+;; https://github.com/defunkt/textmate.el/blob/master/textmate.el#L244
+;; http://chopmo.blogspot.com/2008/09/quickly-jumping-to-symbols.html
 (defun ido-imenu ()
   "Update the imenu index and then use ido to select a symbol to navigate to.
    Symbols matching the text at point are put first in the completion list."
