@@ -1,6 +1,11 @@
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+
 (defun my-css-mode-hook ()
-  (setq css-indent-offset 2)
+  (setq css-indent-offset 2
+        require-final-newline nil)
   (rainbow-mode 1))
+
+(add-hook 'css-mode-hook 'my-css-mode-hook)
 
 (require 'hexrgb)
 
@@ -17,7 +22,5 @@
                         (floor (* 256 (hexrgb-green hex-color)))
                         (floor (* 256 (hexrgb-blue hex-color))))))
           (error "Not a hex color string: %s" hex-color)))))
-
-(add-hook 'css-mode-hook 'my-css-mode-hook)
 
 (provide 'my-css)
