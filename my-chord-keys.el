@@ -35,7 +35,7 @@
 (key-chord-mode 1)
 
 (require 'iy-go-to-char)
-(key-seq-define-global "fg" 'iy-go-to-char)
-(key-seq-define-global "hj" 'iy-go-to-char-backward)
+(key-seq-define-global "fj" 'iy-go-up-to-char)
+(key-seq-define-global "jf" 'iy-go-to-char-backward)
 
 (provide 'my-chord-keys)
