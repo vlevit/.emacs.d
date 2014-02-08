@@ -32,6 +32,14 @@
 (key-seq-define-global "qs" 'ido-imenu)
 (key-seq-define-global "qb" 'ido-switch-buffer)
 
+(key-seq-define-global ",s" 'transpose-symbols)
+(key-seq-define-global ",w" 'transpose-words)
+(key-seq-define-global ",x" 'transpose-sexps)
+(key-seq-define-global ",p" 'transpose-paragraphs)
+(key-seq-define-global ",e" 'transpose-sentences)
+(key-seq-define-global ",l" 'transpose-lines)
+(key-seq-define-global ",c" 'transpose-chars)
+
 (key-chord-mode 1)
 
 (require 'iy-go-to-char)
