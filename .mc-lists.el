@@ -13,14 +13,18 @@
         cua-exchange-point-and-mark
         cua-paste
         cua-paste-pop
+        cua-set-rectangle-mark
         dabbrev-expand
         delete-indentation
+        duplicate-line
         forward-sentence
         forward-sexp
         highlight-symbol-next
         indent-for-tab-command
         iy-go-to-char
+        iy-go-to-char--command
         iy-go-to-char-backward
+        jade-comment-dwim
         jedi:dot-complete
         mark-whole-line
         org-self-insert-command
@@ -30,6 +34,8 @@
         sgml-slash
         sp--cua-replace-region
         sp--self-insert-command
+        sp-backward-delete-char
+        sp-delete-char
         tab-to-tab-stop
         transpose-symbols
         transpose-words
@@ -43,6 +49,7 @@
         eval-expression
         my-create-fake-cursor
         overwrite-mode
+        save-some-buffers
         smex
         toggle-truncate-lines
         yaml-electric-dash-and-dot
