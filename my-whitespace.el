@@ -1,10 +1,7 @@
 (require 'fill-column-indicator)
 
-;; (setq whitespace-style (quote
-;;   (spaces tabs newline space-mark tab-mark newline-mark)))
-
 (setq whitespace-style (quote
-  (face newline tabs newline-mark lines-tail)))
+  (face newline tabs newline-mark)))
 
 ;; make whitespace-mode use “¶” for newline and “▷” for tab.
 ;; together with the rest of its defaults
