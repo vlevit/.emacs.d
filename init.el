@@ -3,6 +3,7 @@
 (require 'my-globals)
 (require 'my-scroll)                    ; conservative scrolling
 (require 'my-whereami)                  ; my-home and my-at-work
+(require 'my-defuns)
 (require 'my-face)
 (require 'my-auto-compile)              ; compile my-*el on save
 (require 'my-package)
@@ -66,7 +67,6 @@
 (require 'my-antiword)
 (require 'my-git)
 (require 'my-vlblog)
-(require 'my-util)
 
 (setq custom-file "~/.emacs.d/my-custom.el")
 (load custom-file)
