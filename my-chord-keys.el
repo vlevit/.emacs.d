@@ -39,6 +39,7 @@
 (key-seq-define-global ",e" 'transpose-sentences)
 (key-seq-define-global ",l" 'transpose-lines)
 (key-seq-define-global ",c" 'transpose-chars)
+(key-seq-define-global ",r" 'transpose-params)
 
 (key-chord-mode 1)
 
