@@ -24,4 +24,29 @@
                         (point))))
     (transpose-regions start-of-first end-of-first start-of-last end-of-last)))
 
+(defun move-forward-out-of-param ()
+  (while (not (looking-at ")\\|, \\| ?}\\| ?\\]"))
+    (cond
+     ((point-is-in-string-p) (move-point-forward-out-of-string))
+     ((looking-at "(\\|{\\|\\[") (forward-list))
+     (t (forward-char)))))
+
+(defun move-backward-out-of-param ()
+  (while (not (looking-back "(\\|, \\|{ ?\\|\\[ ?"))
+    (cond
+     ((point-is-in-string-p) (move-point-backward-out-of-string))
+     ((looking-back ")\\|}\\|\\]") (backward-list))
+     (t (backward-char)))))
+
+(defun current-quotes-char ()
+  (nth 3 (syntax-ppss)))
+
+(defalias 'point-is-in-string-p 'current-quotes-char)
+
+(defun move-point-forward-out-of-string ()
+  (while (point-is-in-string-p) (forward-char)))
+
+(defun move-point-backward-out-of-string ()
+  (while (point-is-in-string-p) (backward-char)))
+
 (provide 'my-defuns)
