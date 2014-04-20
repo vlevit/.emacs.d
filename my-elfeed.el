@@ -35,7 +35,8 @@
         ("http://podrobnosti.ua/rss/" podrobnosti news)
         ("http://www.unn.com.ua/rss/news_ru.xml" unn news)
         ("http://russian.rt.com/rss/" rt news)
-        ("http://www.048.ua/rss" 048 odessa news)
+        ;; ("http://www.048.ua/rss" 048 odessa news) doesn't work with elfeed
+        ("http://dumskaya.net/rssnews" dumskaya news odessa)
         ))
 
 (define-key elfeed-search-mode-map "l"
