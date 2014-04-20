@@ -5,6 +5,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 (setq org-startup-indented t)
+(setq org-startup-folded nil)
 
 (setq org-agenda-files (list "~/org/TODO"))
 
