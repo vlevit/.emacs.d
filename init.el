@@ -46,6 +46,7 @@
 (require 'my-anything)
 (require 'my-visual-regexp)
 (require 'my-sunrise-commander)         ; ido
+(require 'my-elfeed)
 (require 'my-shell)                     ; shell-command, bash-completion
 (require 'my-multiple-async-shell-commands)
 (require 'my-fold-dwim)                 ; fold-dwim
