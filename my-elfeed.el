@@ -23,6 +23,15 @@
         ("http://blogs.gnome.org/mclasen/feed/" gnome)
         ("http://blogs.gnome.org/danni/feed/" gnome python)
 
+        ;; DOU
+        ("http://feeds.feedburner.com/DevelopersOrgUa" dou software news)
+        ("http://dou.ua/calendar/feed/Python/" dou  events python)
+        ("http://dou.ua/calendar/feed/JavaScript/" dou events javascript)
+        ("http://dou.ua/calendar/feed/Linux/" dou events linux)
+        ("http://dou.ua/calendar/feed/все%20темы/Одесса" dou events odessa)
+        ("http://jobs.dou.ua/vacancies/feeds/?cities=Одесса&search=Python" dou python odessa jobs)
+        ("http://jobs.dou.ua/vacancies/feeds/?search=Python&remote" dou python remote jobs)
+
         ;; news
         ("http://www.opennet.ru/opennews/opennews_all.rss" opennet software news)
 
@@ -35,7 +44,7 @@
         ("http://podrobnosti.ua/rss/" podrobnosti news)
         ("http://www.unn.com.ua/rss/news_ru.xml" unn news)
         ("http://russian.rt.com/rss/" rt news)
-        ;; ("http://www.048.ua/rss" 048 odessa news) doesn't work with elfeed
+        ;; ("http://www.048.ua/rss" 048 odessa news) ;; doesn't work with elfeed
         ("http://dumskaya.net/rssnews" dumskaya news odessa)
         ))
 
@@ -52,6 +61,7 @@
         "@1-month-ago +emacs"
         "@1-month-ago +software +news"
         "@2-months-ago +comics"
+        "@2-months-ago +jobs"
         "@2-weeks-ago +news -software"
         ))
 
