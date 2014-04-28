@@ -58,6 +58,12 @@
      (interactive)
      (elfeed-search-set-filter my-elfeed-search-filter)))
 
+(define-key elfeed-search-mode-map "U"
+  '(lambda ()
+     (interactive)
+     (unless (search "+unread" elfeed-search-filter)
+       (elfeed-search-set-filter
+        (format "%s %s" elfeed-search-filter "+unread")))))
 
 (defvar my-elfeed-cycle-filters
       '("@2-months-ago +vlevitorg"
