@@ -1,5 +1,8 @@
 (require 'elfeed)
 
+(setq my-elfeed-search-filter "@1-month-ago -news")
+(setq elfeed-search-filter my-elfeed-search-filter)
+
 (setq elfeed-feeds
       '(
 
@@ -53,7 +56,7 @@
 (define-key elfeed-search-mode-map "l"
   '(lambda ()
      (interactive)
-     (elfeed-search-set-filter "@1-month-ago -news")))
+     (elfeed-search-set-filter my-elfeed-search-filter)))
 
 
 (defvar my-elfeed-cycle-filters
