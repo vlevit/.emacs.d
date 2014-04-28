@@ -34,18 +34,20 @@
 
         ;; news
         ("http://www.opennet.ru/opennews/opennews_all.rss" opennet software news)
-
         ;; comics
         ("http://xkcd.com/atom.xml" xkcd comics)
         ("http://what-if.xkcd.com/feed.atom" what-if comics)
 
+        ;; music
+        ("http://www.rssitfor.me/getrss?name=tobydriver" music twitter tobydriver)
+
         ;; news
         ("http://rss.unian.net/site/news_rus.rss" unian news)
-        ("http://podrobnosti.ua/rss/" podrobnosti news)
-        ("http://www.unn.com.ua/rss/news_ru.xml" unn news)
-        ("http://russian.rt.com/rss/" rt news)
-        ;; ("http://www.048.ua/rss" 048 odessa news) ;; doesn't work with elfeed
-        ("http://dumskaya.net/rssnews" dumskaya news odessa)
+        ;; ("http://podrobnosti.ua/rss/" podrobnosti news)
+        ;; ("http://www.unn.com.ua/rss/news_ru.xml" unn news)
+        ;; ("http://russian.rt.com/rss/" rt news)
+        ;; ;; ("http://www.048.ua/rss" 048 odessa news) ;; doesn't work with elfeed
+        ;; ("http://dumskaya.net/rssnews" dumskaya news odessa)
         ))
 
 (define-key elfeed-search-mode-map "l"
