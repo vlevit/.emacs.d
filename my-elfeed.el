@@ -47,7 +47,8 @@
         ("http://www.rssitfor.me/getrss?name=tobydriver" music twitter tobydriver)
 
         ;; news
-        ("http://rss.unian.net/site/news_rus.rss" unian news)
+        ("http://podrobnosti.ua/rss/hot.rss/" podrobnosti news)
+        ;; ("http://rss.unian.net/site/news_rus.rss" unian news)
         ;; ("http://podrobnosti.ua/rss/" podrobnosti news)
         ;; ("http://www.unn.com.ua/rss/news_ru.xml" unn news)
         ;; ("http://russian.rt.com/rss/" rt news)
