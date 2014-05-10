@@ -40,6 +40,7 @@
         transpose-symbols
         transpose-words
         wgrep-finish-edit
+        yas-expand
         ))
 
 (setq mc/cmds-to-run-once
