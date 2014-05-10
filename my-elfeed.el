@@ -18,6 +18,8 @@
 
         ;; Software
 
+        ("https://www.archlinux.org/feeds/news/" arch news)
+
         ;; planets
         ("http://planet.emacsen.org/atom.xml" emacs planet)
 
