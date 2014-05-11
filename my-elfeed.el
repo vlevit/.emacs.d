@@ -18,7 +18,7 @@
 
         ;; Events
         ("http://vkontakte-feed.appspot.com/feed/edutainment_odessa/wall" bla-bla-club events)
-        ("http://vkontakte-feed.appspot.com/feed/planeta_igr_com/wall" planetaigr events)
+        ;; ("http://vkontakte-feed.appspot.com/feed/planeta_igr_com/wall" planetaigr events)
 
         ;; Software
 
