@@ -1,6 +1,10 @@
 (require 'elfeed)
 
-(setq my-elfeed-search-filter "@1-month-ago -news")
+(defun my-elfeed-sticky (filter)
+  (format "%s %s" my-elfeed-sticky-search-filter filter))
+
+(setq my-elfeed-sticky-search-filter "-deleted")
+(setq my-elfeed-search-filter (my-elfeed-sticky "@1-month-ago -news"))
 (setq elfeed-search-filter my-elfeed-search-filter)
 
 (setq elfeed-feeds
@@ -56,6 +60,14 @@
         ;; ("http://dumskaya.net/rssnews" dumskaya news odessa)
         ))
 
+(define-key elfeed-search-mode-map "d"
+  '(lambda ()
+     (interactive)
+     (let ((entries (elfeed-search-selected)))
+       (cl-loop for entry in entries do (elfeed-tag entry 'deleted))
+       (mapc #'elfeed-search-update-entry entries)
+       (unless (use-region-p) (forward-line)))))
+
 (define-key elfeed-search-mode-map "l"
   '(lambda ()
      (interactive)
@@ -86,7 +98,7 @@
   (let ()
     (setq current-counter (+ my-elfeed-counter (or  step 1)))
     (setq my-elfeed-counter (mod current-counter (length my-elfeed-cycle-filters)))
-    (elfeed-search-set-filter (nth my-elfeed-counter my-elfeed-cycle-filters))))
+    (elfeed-search-set-filter (my-elfeed-sticky (nth my-elfeed-counter my-elfeed-cycle-filters)))))
 
 (defun my-elfeed-search-filter-cycle-forward ()
   (interactive)
