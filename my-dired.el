@@ -18,6 +18,9 @@
 (define-key dired-mode-map (kbd "E") 'dired-xdg-open-file)
 (define-key dired-mode-map (kbd "<S-return>") 'dired-xdg-open-file)
 
+(setq wdired-allow-to-change-permissions t
+      wdired-allow-to-redirect-links t)
+
 (setq dired-guess-shell-alist-user
       (list (list "\\.\\(jpg\\|jpeg\\|png\\)\\'" "eog" "qiv" "gimp")
             (list "\\.\\(mkv\\|mp4\\|avi\\)\\'" "mplayer" "totem")))
