@@ -18,6 +18,7 @@
 (require 'my-end-line-newline)
 (require 'my-mark-whole-line)
 (require 'my-transpose-symbols)
+(require 'my-uniquify-buffers)
 
 (require 'my-conservative-ergomap)
 (require 'my-chord-keys)
