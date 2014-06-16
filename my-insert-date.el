@@ -7,7 +7,8 @@
   (let ((format (cond
                  ((not prefix) "%Y-%m-%d")
                  ((equal prefix '(4)) "%d.%m.%Y")
-                 ((equal prefix '(16)) "%A, %d. %B %Y"))))
+                 ((equal prefix '(16)) "%A, %d. %B %Y")
+                 ((equal prefix '(64)) "%Y-%m-%d %H:%M:%S"))))
     (insert (format-time-string format))))
 
 (global-set-key (kbd "C-c d") 'insert-date)
