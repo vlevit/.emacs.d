@@ -21,6 +21,7 @@
         forward-sexp
         highlight-symbol-next
         indent-for-tab-command
+        insert-date
         iy-go-to-char
         iy-go-to-char--command
         iy-go-to-char-backward
@@ -39,7 +40,10 @@
         tab-to-tab-stop
         transpose-symbols
         transpose-words
+        upcase-region
+        wdired-set-bit
         wgrep-finish-edit
+        yaml-electric-backspace
         yas-expand
         ))
 
@@ -48,6 +52,7 @@
         cua-cut-region
         dired-copy-filename-as-kill
         eval-expression
+        iflipb-next-buffer
         my-create-fake-cursor
         overwrite-mode
         save-some-buffers
