@@ -1,6 +1,6 @@
-(if (my-home)
-    (set-face-attribute 'default nil :height 130)
+(if (>= (x-display-pixel-width) 1920)
+    (set-frame-font "DejaVu Sans Mono 13")
+  (set-frame-font "DejaVu Sans Mono 10")
   (set-face-attribute 'default nil :height 105))
-
 
 (provide 'my-face)
