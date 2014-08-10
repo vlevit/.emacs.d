@@ -1,11 +1,41 @@
+(require 's)
+
 (defvar blog-file-p nil)
+
+(defun vlblog-parse-help-string (str)
+  "Parse a single string STR from `vlblog help' output.
+Return nil if STR is not a command.
+Return a list of commands and options otherwise."
+  (let ((matches (s-match "^vlblog \\(\\S +\\) ?\\(.+\\)*" str)))
+    (if (<= (length matches) 2)
+        (cdr matches)
+      (cons (nth 1 matches) (s-split "|" (nth 2 matches) t)))))
+
+(defun vlblog-commands ()
+  "Run `vlblog help' an return a list of lists whose car is a
+command and whose cdr is options."
+  (delq nil (mapcar 'vlblog-parse-help-string
+                    (mapcar 's-trim-left
+                            (s-lines (shell-command-to-string "vlblog help"))))))
+
+(defun vlblog ()
+  "Run vlblog commands like in shell but with ido autocompletions."
+  (interactive)
+  (let* ((commands (vlblog-commands))
+         (commands-flat (mapcar 'car commands))
+         (command (ido-completing-read "vlblog " commands-flat))
+         (options (cdr (assoc command commands)))
+         (option nil))
+    (when options
+      (setq option (ido-completing-read (concat "vlblog " command " ") options)))
+    (async-shell-command (s-join " " (list "vlblog" command option)))))
 
 (defun blog-file-p ()
   (string-prefix-p
    (expand-file-name "~/projects/vlevit.org/content/") (buffer-file-name)))
 
 (defun vlblog-update ()
-  "Run local server if it is not running and update the blog"
+  "Run a local server if it is not running yet and update the blog"
   (interactive)
   (if (/= (call-process "vlblog" nil nil nil "active") 0)
       (progn (async-shell-command "vlblog run" "*vlblog*")
