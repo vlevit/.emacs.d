@@ -6,6 +6,7 @@
 (require 'my-defuns)
 (require 'my-face)
 (require 'my-auto-compile)              ; compile my-*el on save
+(require 'my-auto-zip)
 (require 'my-package)
 (require 'my-hippie-expand)
 (require 'my-spell)
