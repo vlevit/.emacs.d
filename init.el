@@ -1,13 +1,13 @@
 (add-to-list 'load-path "~/.emacs.d")
 
 (require 'my-globals)
+(require 'my-package)
 (require 'my-scroll)                    ; conservative scrolling
 (require 'my-whereami)                  ; my-home and my-at-work
 (require 'my-defuns)
 (require 'my-face)
 (require 'my-auto-compile)              ; compile my-*el on save
 (require 'my-auto-zip)
-(require 'my-package)
 (require 'my-hippie-expand)
 (require 'my-spell)
 (require 'bookmark+)
