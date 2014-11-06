@@ -17,6 +17,7 @@
         dabbrev-expand
         delete-indentation
         duplicate-line
+        electric-newline-and-maybe-indent
         forward-sentence
         forward-sexp
         highlight-symbol-next
@@ -28,11 +29,15 @@
         jade-comment-dwim
         jedi:dot-complete
         mark-whole-line
+        markdown-demote
+        markdown-exdent-or-delete
+        org-force-self-insert
         org-self-insert-command
         python-indent-dedent-line-backspace
         python-indent-electric-colon
         sgml-close-tag
         sgml-slash
+        sh-assignment
         sp--cua-replace-region
         sp--self-insert-command
         sp-backward-delete-char
