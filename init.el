@@ -1,75 +1,80 @@
-(add-to-list 'load-path "~/.emacs.d")
+(setq site-lisp-dir (expand-file-name "site-lisp" user-emacs-directory))
+(setq setup-lisp-dir (expand-file-name "setup-lisp" user-emacs-directory))
 
-(require 'my-globals)
-(require 'my-package)
-(require 'my-scroll)                    ; conservative scrolling
-(require 'my-whereami)                  ; my-home and my-at-work
-(require 'my-defuns)
-(require 'my-face)
-(require 'my-auto-compile)              ; compile my-*el on save
-(require 'my-auto-zip)
-(require 'my-hippie-expand)
-(require 'my-spell)
-(require 'bookmark+)
-(require 'my-lang)
-(require 'my-insert-date)
-(require 'my-tabs)
-(require 'my-c-x-x)
-(require 'my-duplicate-line)
-(require 'my-end-line-newline)
-(require 'my-mark-whole-line)
-(require 'my-transpose-symbols)
-(require 'my-uniquify-buffers)
+(add-to-list 'load-path site-lisp-dir)
+(add-to-list 'load-path setup-lisp-dir)
 
-(require 'my-conservative-ergomap)
-(require 'my-chord-keys)
-(require 'my-color-theme)
-(require 'my-vline)
+(require 'setup-globals)
+(require 'setup-package)
+(require 'setup-scroll)                    ; conservative scrolling
+(require 'setup-whereami)                  ; setup-home and setup-at-work
+(require 'setup-defuns)
+(require 'setup-face)
+(require 'setup-auto-compile)              ; compile setup-*el on save
+(require 'setup-auto-zip)
+(require 'setup-hippie-expand)
+(require 'setup-spell)
+(require 'setup-lang)
+(require 'setup-insert-date)
+(require 'setup-tabs)
+(require 'setup-c-x-x)
+(require 'setup-duplicate-line)
+(require 'setup-end-line-newline)
+(require 'setup-mark-whole-line)
+(require 'setup-transpose-symbols)
+(require 'setup-uniquify-buffers)
+
+(require 'dired)
+(require 'setup-conservative-ergomap)
+(require 'setup-chord-keys)
+(require 'setup-color-theme)
+(require 'setup-vline)
 (require 'pos-tip)
-(require 'my-marks)                     ; marker-visit, auto-mark
-(require 'my-smex)                      ; ido
-(require 'my-bm)
-(require 'my-clipboard)
-(require 'my-executable)
-(require 'my-saveplace)
-(require 'my-whitespace)                ; fill-column-indicator
-(require 'my-flymake)
-(require 'my-auto-complete)
-(require 'my-dired)
-(require 'my-smartparens)
-(require 'my-yasnippet)
-(require 'my-multiple-cursors)
-(require 'my-occur-mode)
-(require 'my-buffer-stack)
-(require 'my-winner-mode)
+(require 'setup-marks)                     ; marker-visit, auto-mark
+(require 'setup-smex)                      ; ido
+(require 'setup-bm)
+(require 'setup-clipboard)
+(require 'setup-executable)
+(require 'setup-saveplace)
+(require 'setup-whitespace)                ; fill-column-indicator
+(require 'setup-flymake)
+(require 'setup-auto-complete)
+(require 'setup-dired)
+(require 'setup-smartparens)
+(require 'setup-yasnippet)
+(require 'setup-multiple-cursors)
+(require 'setup-occur-mode)
+(require 'setup-buffer-stack)
+(require 'setup-winner-mode)
 (require 'ido-other-window)
-(require 'my-highlight-symbol)
-(require 'my-ido)                       ; recentf, imenu
-(require 'my-anything)
-(require 'my-visual-regexp)
-(require 'my-sunrise-commander)         ; ido
-(require 'my-elfeed)
-(require 'my-shell)                     ; shell-command, bash-completion
-(require 'my-multiple-async-shell-commands)
-(require 'my-fold-dwim)                 ; fold-dwim
-(require 'my-man)
-(require 'my-diff)
-(require 'my-sudo-edit)
+(require 'setup-highlight-symbol)
+(require 'setup-ido)                       ; recentf, imenu
+(require 'setup-anything)
+(require 'setup-visual-regexp)
+(require 'setup-sunrise-commander)         ; ido
+(require 'setup-elfeed)
+(require 'setup-shell)                     ; shell-command, bash-completion
+(require 'setup-multiple-async-shell-commands)
+(require 'setup-fold-dwim)                 ; fold-dwim
+(require 'setup-man)
+(require 'setup-diff)
+(require 'setup-sudo-edit)
 
-(require 'my-python)                    ; flymake, jedi
-(require 'my-c-mode)
-(require 'my-html)
-(require 'my-css)
-(require 'my-js)
-(require 'my-coffee)
-(require 'my-org-mode)
-(require 'my-markdown)
-(require 'my-wiki)
-(require 'my-bbcode)
-(require 'my-tex)
-(require 'my-antiword)
-(require 'my-git)
-(require 'my-vlblog)
+(require 'setup-python)                    ; flymake, jedi
+(require 'setup-c-mode)
+(require 'setup-html)
+(require 'setup-css)
+(require 'setup-js)
+(require 'setup-coffee)
+(require 'setup-org-mode)
+(require 'setup-markdown)
+(require 'setup-wiki)
+(require 'setup-tex)
+(require 'setup-antiword)
+(require 'setup-git)
+(require 'setup-vlblog)
 
-(setq custom-file "~/.emacs.d/my-custom.el")
+(add-hook 'after-init-hook 'auto-save-mode)
+
+(setq custom-file (expand-file-name "setup-custom.el" setup-lisp-dir))
 (load custom-file)
