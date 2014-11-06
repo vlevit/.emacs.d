@@ -23,7 +23,6 @@
 (define-key ergomap-keymap (kbd "<C-S-f7>") 'previous-error)
 (define-key ergomap-keymap (kbd "<S-f10>") 'menu-bar-mode)
 
-(require 'basic-edit-toolkit)
 (define-key ergomap-keymap (kbd "M-<up>") 'move-text-up)
 (define-key ergomap-keymap (kbd "M-<down>") 'move-text-down)
 
