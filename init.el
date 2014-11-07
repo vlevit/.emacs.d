@@ -23,6 +23,7 @@
 (require 'setup-mark-whole-line)
 (require 'setup-transpose-symbols)
 (require 'setup-uniquify-buffers)
+(require 'setup-projects)
 
 (require 'dired)
 (require 'setup-conservative-ergomap)

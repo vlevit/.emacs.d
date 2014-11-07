@@ -27,6 +27,7 @@
 (key-seq-define-global "qo" 'other-window)
 (key-seq-define-global "qf" 'ido-find-file)
 (key-seq-define-global "qh" 'find-file-in-repository)
+(key-seq-define-global "qj" 'projects)
 (key-seq-define-global "qd" 'sunrise-cd)
 (key-seq-define-global "qg" 'magit-status)
 (key-seq-define-global "qs" 'ido-imenu)
