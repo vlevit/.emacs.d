@@ -30,7 +30,7 @@
 (key-seq-define-global "qj" 'find-projects)
 (key-seq-define-global "qd" 'sunrise-cd)
 (key-seq-define-global "qg" 'magit-status)
-(key-seq-define-global "qs" 'ido-imenu)
+(key-seq-define-global "qs" 'idomenu)
 (key-seq-define-global "qb" 'ido-switch-buffer)
 (key-seq-define-global "ql" 'elfeed)
 
