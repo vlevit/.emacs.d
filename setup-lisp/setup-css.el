@@ -1,4 +1,5 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.styl\\'" . css-mode))
 
 (defun my-css-mode-hook ()
   (setq css-indent-offset 2
