@@ -20,7 +20,7 @@
 (global-linum-mode 1)     ; display of line numbers in the left margin
 (line-number-mode 1)      ; make line number appear in the mode line
 (column-number-mode 1)    ; make column number appear in the mode line
-(cua-selection-mode 1)    ; shifted movement keys activate the region
+(delete-selection-mode 1)
 ; (set-default-font "DejaVu Sans Mono")         ; set default font to DejaVu Sans Mono
 (setq word-wrap t)
 (setq fill-column 70)
