@@ -36,5 +36,6 @@
 (setq delete-by-moving-to-trash t)
 (setq disabled-command-function nil)    ; enable all disabled commands
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
+(electric-indent-mode -1)
 
 (provide 'setup-globals)
