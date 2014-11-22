@@ -28,6 +28,7 @@
         iy-go-to-char-backward
         jade-comment-dwim
         jedi:dot-complete
+        kill-region
         mark-whole-line
         markdown-demote
         markdown-exdent-or-delete
