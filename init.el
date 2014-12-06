@@ -24,6 +24,7 @@
 (require 'setup-transpose-symbols)
 (require 'setup-uniquify-buffers)
 (require 'setup-projects)
+(require 'setup-save-some-buffers)
 
 (require 'dired)
 (require 'setup-conservative-ergomap)
