@@ -1,5 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/themes")
-(require 'color-theme-solarized)
-(color-theme-solarized-light)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/site-lisp/tango-plus-theme/")
+(load-theme 'tango-plus t)
 
 (provide 'setup-color-theme)
