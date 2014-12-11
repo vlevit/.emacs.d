@@ -1,6 +1,18 @@
 (require 'python)
 (require 'fill-column-indicator)
 
+;; https://github.com/fgallina/python.el/pull/110
+(defun python-font-lock-syntactic-face-function (state)
+  (if (nth 3 state)
+      (let ((startpos (nth 8 state)))
+        (save-excursion
+          (goto-char startpos)
+          (if (and (looking-at-p "'''\\|\"\"\"")
+                   (looking-back "\\`\\|^\\s *\\(?:class\\|def\\)\\s +\\(?:\\sw\\|\\s_\\)+(.*):\n\\s *"))
+              font-lock-doc-face
+            font-lock-string-face)))
+    font-lock-comment-face))
+
 ;; http://puntoblogspot.blogspot.com/2013/03/poor-mans-taglist.html
 (defun my-show-tags ()
   (interactive)
@@ -10,6 +22,11 @@
     (rename-buffer "*Tag List*")))
 
 (defun my-python-mode-hook ()
+  (set (make-local-variable 'font-lock-defaults)
+       '(python-font-lock-keywords
+         nil nil nil nil
+         (font-lock-syntactic-face-function
+          . python-font-lock-syntactic-face-function)))
   (setq fill-column 79)
   (set (make-local-variable 'whitespace-style)
        (quote (face newline tabs newline-mark)))
