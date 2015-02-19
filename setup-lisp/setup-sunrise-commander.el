@@ -73,7 +73,7 @@
 (if (or (my-home) (my-book))
     (progn
       (my-bm (kbd "p") "/tmp")
-      (my-bm (kbd "t") "/var/tmp")
+      (my-bm (kbd "P") "/var/tmp")
       (my-bm (kbd "m") "~/Music")
       (my-bm (kbd "v") "~/Video")
       (my-bm (kbd "j") "~/projects")
