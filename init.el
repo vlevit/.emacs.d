@@ -51,7 +51,6 @@
 (require 'ido-other-window)
 (require 'setup-highlight-symbol)
 (require 'setup-ido)                       ; recentf, imenu
-(require 'setup-anything)
 (require 'setup-visual-regexp)
 (require 'setup-sunrise-commander)         ; ido
 (require 'setup-elfeed)
