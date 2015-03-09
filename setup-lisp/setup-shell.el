@@ -1,5 +1,4 @@
-(require 'shell-command)
-(shell-command-completion-mode)
+(require 'shell)
 
 (autoload 'bash-completion-dynamic-complete 
   "bash-completion"
