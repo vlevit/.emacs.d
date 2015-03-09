@@ -4,6 +4,8 @@
 (define-key ergomap-keymap (kbd "<f2>") 'save-buffer)
 (define-key ergomap-keymap (kbd "<S-f2>") 'kill-this-buffer)
 
+(define-key ergomap-keymap [remap kill-ring-save] 'kill-ring-save-line)
+
 (define-key ergomap-keymap (kbd "M-2") 'other-window)
 (define-key ergomap-keymap (kbd "M-@") '(lambda () (interactive) (other-window -1)))
 (define-key ergomap-keymap (kbd "M-)") 'delete-other-windows)

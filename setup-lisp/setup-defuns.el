@@ -100,4 +100,11 @@
   "Copy entire buffer to clipboard"
   (interactive)
   (clipboard-kill-ring-save (point-min) (point-max)))
+
+(defun kill-ring-save-line ()
+  (interactive)
+  (if (equal mark-active nil)
+      (kill-ring-save (point) (line-end-position))
+    (kill-ring-save (point) (mark))))
+
 (provide 'setup-defuns)
