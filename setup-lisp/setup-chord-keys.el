@@ -23,6 +23,7 @@
 (key-seq-define-global "qe" (kbd "C-e"))
 (key-seq-define-global "qa" (kbd "M-m"))
 (key-seq-define-global "hh" 'mark-whole-line)
+(key-seq-define-global "qy" 'copy-whole-buffer)
 (key-seq-define-global "q`" 'ido-switch-buffer)
 (key-seq-define-global "qo" 'other-window)
 (key-seq-define-global "qf" 'ido-find-file)

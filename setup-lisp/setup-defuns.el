@@ -96,4 +96,8 @@
   (interactive "*p")
   (move-text-internal arg))
 
+(defun copy-whole-buffer ()
+  "Copy entire buffer to clipboard"
+  (interactive)
+  (clipboard-kill-ring-save (point-min) (point-max)))
 (provide 'setup-defuns)
