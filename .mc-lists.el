@@ -7,6 +7,7 @@
         autopair-insert-or-skip-quote
         autopair-skip-close-maybe
         backward-sexp
+        c-electric-star
         coffee-dedent-line-backspace
         cua-copy-region
         cua-delete-region
@@ -32,6 +33,8 @@
         mark-whole-line
         markdown-demote
         markdown-exdent-or-delete
+        org-delete-char
+        org-end-of-line
         org-force-self-insert
         org-self-insert-command
         python-indent-dedent-line-backspace
