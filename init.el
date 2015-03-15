@@ -74,6 +74,7 @@
 (require 'setup-antiword)
 (require 'setup-git)
 (require 'setup-vlblog)
+(require 'setup-twitter)
 
 (add-hook 'after-init-hook 'auto-save-mode)
 
