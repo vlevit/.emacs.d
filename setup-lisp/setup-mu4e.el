@@ -96,6 +96,20 @@
                ((string-match (@gmail "alex.dyadya") from) (@gmail "alex.dyadya")))))
           (setq message-sendmail-extra-arguments (list '"-a" account))))))
 
+(defun my-mu4e-update-handler (msg is-move)
+  (unless is-move
+    (let ((flags (mu4e-message-field msg :flags))
+          (msgid (mu4e-message-field msg :message-id))
+          (maildir (mu4e-message-field msg :maildir)))
+      (when (member 'seen flags)
+        (message msgid)
+        (unless (string-prefix-p "/feeds/" maildir)
+          (start-process "checkmail" nil "checkmail" "--update"))
+        (when (fboundp 'my-mu4e-maildirs-update)
+          (my-mu4e-maildirs-update))))))
+
+(advice-add 'mu4e~headers-update-handler :before 'my-mu4e-update-handler)
+
 (define-key mu4e-headers-mode-map "r" 'mu4e-mark-as-read)
 (define-key mu4e-headers-mode-map "e" 'mu4e-view-search-edit)
 (define-key mu4e-main-mode-map "q" 'bury-buffer)
