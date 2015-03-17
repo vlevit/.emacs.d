@@ -33,7 +33,7 @@
 (key-seq-define-global "qg" 'magit-status)
 (key-seq-define-global "qs" 'idomenu)
 (key-seq-define-global "qb" 'ido-switch-buffer)
-(key-seq-define-global "qk" 'elfeed)
+(key-seq-define-global "qk" 'mu4e)
 (key-seq-define-global "qi" 'twit)
 
 (key-seq-define-global ",s" 'transpose-symbols)

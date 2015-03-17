@@ -10,7 +10,9 @@
   (unless (derived-mode-p 'sgml-mode)
     (flyspell-mode 1)
     (ispell-change-dictionary "ru-yeyo")
-    (flyspell-buffer)))
+    ; flyspell hangs in mu4e-compose for some reason
+    (unless (derived-mode-p 'mu4e-compose-mode)
+      (flyspell-buffer))))
 
 (defun my-flyspell-prog-mode-hook ()
   (flyspell-prog-mode)

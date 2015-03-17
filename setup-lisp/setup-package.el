@@ -62,6 +62,7 @@
                       key-chord
                       magit
                       markdown-mode
+                      mu4e-maildirs-extension
                       multiple-cursors
                       mwe-log-commands
                       names
