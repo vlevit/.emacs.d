@@ -49,7 +49,7 @@
      (user-full-name "Slava"))))
 
 (setq mu4e-user-mail-address-list
-      '((@vlevit "me") (@gmail "levit.slava") (@gmail "levit.slava")))
+      `(,(@vlevit "me") ,(@gmail "levit.slava") ,(@gmail "levit.slava")))
 
 
 (setq vlevit-inbox-filter
