@@ -67,6 +67,7 @@
 (require 'setup-sudo-edit)
 
 (require 'setup-python)                    ; flymake, jedi
+(require 'setup-elisp)
 (require 'setup-c-mode)
 (require 'setup-html)
 (require 'setup-css)
