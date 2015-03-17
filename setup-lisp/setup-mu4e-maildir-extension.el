@@ -19,9 +19,8 @@
 
 (mu4e-maildirs-extension)
 
-(defun mu4e-maildirs-extension-force-update ()
+(defun my-mu4e-maildirs-update ()
   "Clear cache and insert maildirs summary."
-  (interactive)
   (setq mu4e-maildirs-extension-cached-maildirs-data nil)
   (mu4e-maildirs-extension-update))
 
