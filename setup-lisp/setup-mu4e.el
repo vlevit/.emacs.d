@@ -115,6 +115,7 @@
 (define-key mu4e-main-mode-map "q" 'bury-buffer)
 (define-key mu4e-view-mode-map "l" 'mu4e-view-toggle-plaintext)
 (define-key mu4e-view-mode-map "<tab>" 'shr-next-link)
+(define-key mu4e-view-mode-map "f" 'mu4e-shr-browse-last-url)
 
 (add-hook 'message-send-mail-hook 'choose-msmtp-account)
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)

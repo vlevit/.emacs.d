@@ -54,4 +54,12 @@
       (mu4e-view-html)
     (mu4e-view-plaintext)))
 
+(defun mu4e-shr-browse-last-url ()
+  "Find URL nearest to the end of the buffer and browse it."
+  (interactive)
+  (let ((url-pos (previous-single-property-change (point-max) 'shr-url nil)))
+    (if url-pos
+        (browse-url (get-text-property (- url-pos 1) 'shr-url))
+      (message "URL not found"))))
+
 (provide 'mu4e-defuns)
