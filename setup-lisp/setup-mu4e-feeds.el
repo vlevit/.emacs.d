@@ -1,14 +1,14 @@
 (defvar my-mu4e-default-filter "maildir:/feeds/* AND NOT opennet")
 
 (defvar my-mu4e-cycle-filters
-  '("maildir:/feeds/.personal*"
-    "maildir:/feeds/.events*"
-    "maildir:/feeds/.music*"
-    "maildir:/feeds/.tech*"
-    "maildir:/feeds/.emacs*"
-    "maildir:/feeds/.humor*"
-    "maildir:/feeds/.jobs*"
-    "maildir:/feeds/.opennet*"
+  '("maildir:/feeds/personal*"
+    "maildir:/feeds/events*"
+    "maildir:/feeds/music*"
+    "maildir:/feeds/tech*"
+    "maildir:/feeds/emacs*"
+    "maildir:/feeds/humor*"
+    "maildir:/feeds/jobs*"
+    "maildir:/feeds/opennet*"
     ))
 
 (defvar my-mu4e-counter 0)
