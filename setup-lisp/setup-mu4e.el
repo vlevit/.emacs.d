@@ -47,6 +47,19 @@
 (setq mu4e-user-mail-address-list
       `(,(@vlevit "me") ,(@gmail "levit.slava") ,(@gmail "alex.dyadya")))
 
+(setq mu4e-maildir-shortcuts
+      '(("/me/Inbox" . ?i)
+        ("/me/Personal" . ?p)
+        ("/me/Admin" . ?a)
+        ("/me/Dev" . ?d)
+        ("/me/Work" . ?w)
+        ("/me/Bulk" . ?b)
+        ("/me/Junk" . ?j)
+        ("/me/Trash" . ?t)
+        ("/me/Sent" . ?s)
+        ("/alex.dyadya/Inbox" . ?l)
+        ("/spnest/Inbox" . ?n)
+        ("/feeds/personal" . ?f)))
 
 (setq mu4e-bookmarks
       '(("flag:unread AND NOT flag:trashed AND NOT maildir:/feeds/*" "Unread messages" ?u)
