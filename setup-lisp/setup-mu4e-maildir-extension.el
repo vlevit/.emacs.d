@@ -1,21 +1,20 @@
 (require 'mu4e-maildirs-extension)
 
 (setq mu4e-maildirs-extension-custom-list
- `(,(@vlevit-folder "me" "Inbox")
-   ,(@vlevit-folder "me" "Personal")
-   ,(@vlevit-folder "me" "Admin")
-   ,(@vlevit-folder "me" "Dev")
-   ,(@vlevit-folder "me" "Work")
-   ,(@vlevit-folder "me" "Bulk")
-   ,(@vlevit-folder "me" "Junk")
-   ,(@vlevit-folder "me" "Trash")
-   ,(@vlevit-folder "me" "Sent")
+      '("/me/Inbox"
+        "/me/Personal"
+        "/me/Admin"
+        "/me/Dev"
+        "/me/Work"
+        "/me/Bulk"
+        "/me/Junk"
+        "/me/Trash"
+        "/me/Sent"
 
-   ,(@vlevit-folder "me" "Inbox")
-   ,(@gmail-folder "alex.dyadya" "Inbox")
-   ,(@gmail-folder "spnest" "Inbox")
+        "/alex.dyadya/Inbox"
+        "/spnest/Inbox"
 
-   "/feeds/.personal.me"))
+        "/feeds/personal/*"))
 
 (mu4e-maildirs-extension)
 
