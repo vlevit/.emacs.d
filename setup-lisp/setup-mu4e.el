@@ -5,10 +5,6 @@
 ;; email obfuscation
 (defun @vlevit (address) (concat address "@vlevit.org"))
 (defun @gmail (address) (concat address "@gmail.com"))
-(defun @vlevit-folder (address folder) (concat "/" (@vlevit address) "/" folder))
-(defun @gmail-folder (address folder) (concat "/" (@gmail address) "/" folder))
-(defun @vlevit-maildir (address &optional suffix) (concat "maildir:/" (@vlevit address) "/" (or suffix "*")))
-(defun @gmail-maildir (address &optional suffix) (concat "maildir:/" (@gmail address) "/" (or suffix "*")))
 
 (setq mu4e-maildir "~/Maildir"
       mu4e-change-filenames-when-moving t
@@ -21,48 +17,43 @@
       mu4e-compose-signature "Sent with mu4e -> message-mode -> emacs -> msmtp -> postfix"
       mu4e-compose-signature-auto-include nil)
 
-(setq mu4e-sent-folder (@vlevit-folder "me" "Sent")
-      mu4e-trash-folder (@vlevit-folder "me" "Trash")
-      mu4e-drafts-folder (@vlevit-folder "me" "Drafts")
+(setq mu4e-sent-folder "/me/Sent"
+      mu4e-trash-folder "/me/Trash"
+      mu4e-drafts-folder "/me/Drafts"
       user-mail-address (@vlevit "me")
       user-full-name "Vyacheslav Levit")
 
 ;; http://www.djcbsoftware.nl/code/mu/mu4e/Multiple-accounts.html
 (defvar my-mu4e-account-alist
-  `((,(@vlevit "me")
-     (mu4e-sent-folder ,(@vlevit-folder "me" "Sent"))
-     (mu4e-trash-folder ,(@vlevit-folder "me" "Trash"))
-     (mu4e-drafts-folder ,(@vlevit-folder "me" "Drafts"))
+  `(("me"
+     (mu4e-sent-folder "/me/Sent")
+     (mu4e-trash-folder "/me/Trash")
+     (mu4e-drafts-folder "/me/Drafts")
      (user-mail-address ,(@vlevit "me"))
      (user-full-name "Vyacheslav Levit"))
-    (,(@gmail "alex.dyadya")
-     (mu4e-sent-folder ,(@gmail-folder "alex.dyadya" "Sent"))
-     (mu4e-trash-folder ,(@gmail-folder "alex.dyadya" "Trash"))
-     (mu4e-drafts-folder ,(@gmail-folder "alex.dyadya" "Drafts"))
+    ("alex.dyadya"
+     (mu4e-sent-folder "/alex.dyadya/Sent")
+     (mu4e-trash-folder "/alex.dyadya/Trash")
+     (mu4e-drafts-folder "/alex.dyadya/Drafts")
      (user-mail-address ,(@gmail "alex.dyadya"))
-     ((user-full-name "Alex Dyadya")))
-    (,(@gmail "spnest")
-     (mu4e-sent-folder ,(@gmail-folder "spnest" "Sent"))
-     (mu4e-trash-folder ,(@gmail-folder "spnest" "Trash"))
-     (mu4e-drafts-folder ,(@gmail-folder "spnest" "Drafts"))
+     (user-full-name "Alex Dyadya"))
+    ("spnest"
+     (mu4e-sent-folder "/spnest/Sent")
+     (mu4e-trash-folder "/spnest/Trash")
+     (mu4e-drafts-folder "/spnest/Drafts")
      (user-mail-address ,(@gmail "spnest"))
      (user-full-name "Slava"))))
 
 (setq mu4e-user-mail-address-list
-      `(,(@vlevit "me") ,(@gmail "levit.slava") ,(@gmail "levit.slava")))
+      `(,(@vlevit "me") ,(@gmail "levit.slava") ,(@gmail "alex.dyadya")))
 
-
-(setq vlevit-inbox-filter
-      (concat (@vlevit-maildir "me") " AND NOT "
-              (@vlevit-maildir "me" "Sent") " AND NOT "
-              (@vlevit-maildir "me" "Trash")))
 
 (setq mu4e-bookmarks
-      `(("flag:unread AND NOT flag:trashed AND NOT maildir:/feeds/*" "Unread messages" ?u)
+      '(("flag:unread AND NOT flag:trashed AND NOT maildir:/feeds/*" "Unread messages" ?u)
         ("date:today..now" "Today's messages" ?t)
-        (,vlevit-inbox-filter ,(@vlevit "me") ?i)
+        ("maildir:/me/* AND NOT maildir:/me/Sent AND NOT maildir:/me/Trash" "me" ?i)
         ("flag:unread AND maildir:/feeds/*" "Feeds" ?f)
-        ("date:7d..now AND NOT maildir:/feeds/*" "Last 7 days" ?w)))
+        ("date:7d..now AND NOT maildir:/feeds/" "Last 7 days" ?w)))
 
 (add-to-list 'mu4e-view-actions
   '("ViewInBrowser" . mu4e-action-view-in-browser) t)
