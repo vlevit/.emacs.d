@@ -108,9 +108,7 @@
       (when (member 'seen flags)
         (message msgid)
         (unless (string-prefix-p "/feeds/" maildir)
-          (start-process "checkmail" nil "checkmail" "--update"))
-        (when (fboundp 'my-mu4e-maildirs-update)
-          (my-mu4e-maildirs-update))))))
+          (start-process "checkmail" nil "checkmail" "--update"))))))
 
 (advice-add 'mu4e~headers-update-handler :before 'my-mu4e-update-handler)
 
