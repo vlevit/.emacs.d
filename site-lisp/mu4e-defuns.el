@@ -7,6 +7,10 @@
     (funcall action docid nil)
     (mu4e-headers-next)))
 
+(defun mu4e-headers-jump-bookmark (kar)
+  (interactive "c")
+  (mu4e-headers-search-bookmark (mu4e-get-bookmark-query kar)))
+
 (defun my-mu4e-set-account ()
   "Set the account for composing a message."
   (let* ((account

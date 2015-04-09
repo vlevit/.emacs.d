@@ -19,7 +19,6 @@
       (define-key keymap (vector 'key-chord key1 key2) command))))
 
 
-(key-seq-define-global "qn" (kbd "C-e C-j"))
 (key-seq-define-global "qe" (kbd "C-e"))
 (key-seq-define-global "qa" (kbd "M-m"))
 (key-seq-define-global "hh" 'mark-whole-line)
@@ -34,6 +33,7 @@
 (key-seq-define-global "qs" 'idomenu)
 (key-seq-define-global "qb" 'ido-switch-buffer)
 (key-seq-define-global "qk" 'mu4e)
+(key-seq-define-global "qn" (lambda () (interactive) (mu4e-headers-jump-bookmark ?u)))
 (key-seq-define-global "qi" 'twit)
 
 (key-seq-define-global ",s" 'transpose-symbols)
