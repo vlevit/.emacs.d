@@ -130,7 +130,6 @@
 (add-hook 'ido-setup-hook 'ido-define-keys)
 
 (global-set-key (kbd "M-`") 'ido-switch-buffer)
-(global-set-key (kbd "C-`") 'ido-switch-buffer)
 (global-set-key (kbd "M-~") 'recentf-ido-find-file)
 
 (global-set-key (kbd "M-g M-h") 'ido-imenu)
