@@ -14,6 +14,7 @@
 (define-key ergomap-keymap (kbd "M-#") 'split-window-vertically-and-switch)
 
 (define-key ergomap-keymap (kbd "C-x C-a") 'ffap)
+(global-set-key (kbd "C-`") 'ibuffer)
 
 (define-key ergomap-keymap (kbd "M-H") 'mark-line)
 (define-key ergomap-keymap (kbd "M-?") 'hippie-expand)
@@ -38,6 +39,7 @@
 
 (require 'find-file-in-repository)
 (define-key ergomap-keymap (kbd "C-x C-h") 'find-file-in-repository)
+
 
 (define-minor-mode ergomap-mode
   "minor mode that provides ergonomic keybindings"
