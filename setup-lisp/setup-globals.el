@@ -15,7 +15,6 @@
 (setq inhibit-startup-message t)     ; disable startup message
 (setq inhibit-splash-screen t)       ; disable splash screen
 (transient-mark-mode 1)              ; highlight text selection
-(delete-selection-mode 1)            ; delete seleted text when typing
 (show-paren-mode 1)                  ; turn on paren match highlighting
 (global-linum-mode 1)     ; display of line numbers in the left margin
 (line-number-mode 1)      ; make line number appear in the mode line
