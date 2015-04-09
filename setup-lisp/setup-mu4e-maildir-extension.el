@@ -23,4 +23,7 @@
   (setq mu4e-maildirs-extension-cached-maildirs-data nil)
   (mu4e-maildirs-extension-update))
 
+(define-key mu4e-main-mode-map "p"
+  '(lambda () (interactive) (mu4e-maildirs-extension-force-update '(16))))
+
 (provide 'setup-mu4e-maildir-extension)
