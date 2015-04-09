@@ -87,6 +87,7 @@
                       wgrep
                       window-layout
                       windsize
+                      vlf
                       xml-rpc
                       yaml-mode
                       yasnippet)))

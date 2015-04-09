@@ -65,6 +65,7 @@
 (require 'setup-man)
 (require 'setup-diff)
 (require 'setup-sudo-edit)
+(require 'vlf)
 
 (require 'setup-python)                    ; flymake, jedi
 (require 'setup-elisp)
