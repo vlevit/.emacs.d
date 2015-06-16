@@ -9,6 +9,7 @@
         backward-sexp
         c-electric-star
         coffee-dedent-line-backspace
+        comment-dwim
         cua-copy-region
         cua-delete-region
         cua-exchange-point-and-mark
@@ -50,6 +51,8 @@
         transpose-symbols
         transpose-words
         upcase-region
+        wdired-capitalize-word
+        wdired-previous-line
         wdired-set-bit
         wgrep-finish-edit
         yaml-electric-backspace
