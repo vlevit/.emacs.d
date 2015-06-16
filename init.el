@@ -4,6 +4,10 @@
 (add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path setup-lisp-dir)
 
+(dolist (project (directory-files site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
+
 (server-start)
 
 (require 'setup-globals)
