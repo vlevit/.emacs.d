@@ -16,7 +16,6 @@
 (setq inhibit-splash-screen t)       ; disable splash screen
 (transient-mark-mode 1)              ; highlight text selection
 (show-paren-mode 1)                  ; turn on paren match highlighting
-(global-linum-mode 1)     ; display of line numbers in the left margin
 (line-number-mode 1)      ; make line number appear in the mode line
 (column-number-mode 1)    ; make column number appear in the mode line
 (cua-selection-mode 1)

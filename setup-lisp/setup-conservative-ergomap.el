@@ -40,6 +40,8 @@
 (require 'find-file-in-repository)
 (define-key ergomap-keymap (kbd "C-x C-h") 'find-file-in-repository)
 
+(define-key ergomap-keymap (kbd "<f9>") 'linum-mode)
+
 
 (define-minor-mode ergomap-mode
   "minor mode that provides ergonomic keybindings"
