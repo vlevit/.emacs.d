@@ -1,3 +1,6 @@
 [submodule "site-lisp/tango-plus-theme"]
 	path = site-lisp/tango-plus-theme
 	url = git@github.com:vlevit/tango-plus-theme.git
+[submodule "site-lisp/key-seq"]
+	path = site-lisp/key-seq
+	url = git@github.com:vlevit/key-seq.el.git

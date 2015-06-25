@@ -60,6 +60,7 @@
                       js2-refactor
                       jump-char
                       key-chord
+                      key-seq
                       magit
                       markdown-mode
                       mu4e-maildirs-extension
