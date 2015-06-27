@@ -1,5 +1,4 @@
-(require 'python)
-(require 'fill-column-indicator)
+;;; Python mode setup
 
 ;; https://github.com/fgallina/python.el/pull/110
 (defun python-font-lock-syntactic-face-function (state)
@@ -12,6 +11,11 @@
               font-lock-doc-face
             font-lock-string-face)))
     font-lock-comment-face))
+
+;; https://github.com/fgallina/python.el/pull/82
+;; (eval-after-load 'python
+;;    '(font-lock-add-keywords 'python-mode `((,python-cell-cellbreak-regex
+;;                                             1 'python-cell-cellbreak-face prepend))))
 
 ;; http://puntoblogspot.blogspot.com/2013/03/poor-mans-taglist.html
 (defun my-show-tags ()
@@ -71,11 +75,13 @@
   (add-to-list 'flymake-allowed-file-name-masks
                '("xatk" flymake-pyflakes-init)))
 
-(add-to-list 'load-path "~/.emacs.d/src/jedi")
-(require 'jedi)
-(setq jedi:server-command (list "python2" jedi:server-script))
+;;; Jedi setup
 
 (defun my-jedi-server-setup ()
+
+  (setq jedi:server-command (list "python2" jedi:server-script)
+        jedi:complete-on-dot t)
+
   (let ((projects
          '(("~/projects/vlevit.org/" . "~/virtualenvs/vlevit.org/")
            ("~/work/josh/prettytracker/" . "~/virtualenvs/prettytracker/")
@@ -95,6 +101,5 @@
 
 (add-hook 'python-mode-hook 'my-jedi-server-setup)
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
 
 (provide 'setup-python)
