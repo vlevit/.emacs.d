@@ -1,6 +1,3 @@
-(require 'coffee-mode)
-(require 'flymake-coffee)
-
 (defun my-coffee-hook ()
   (setq tab-width 2)
   (setq coffee-tab-width 2)

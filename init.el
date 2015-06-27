@@ -59,13 +59,11 @@
 (require 'setup-ido)                       ; recentf, imenu
 (require 'setup-visual-regexp)
 (require 'setup-sunrise-commander)         ; ido
-;; (require 'setup-elfeed)
 (require 'setup-mu4e)
 (require 'setup-mu4e-maildir-extension)
 (require 'setup-mu4e-feeds)
 (require 'setup-shell)                     ; shell-command, bash-completion
 (require 'setup-multiple-async-shell-commands)
-(require 'setup-fold-dwim)                 ; fold-dwim
 (require 'setup-man)
 (require 'setup-diff)
 (require 'setup-sudo-edit)
