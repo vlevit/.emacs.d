@@ -3,6 +3,9 @@
 
 (setq dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^systemd-private")
 
+(setq list-directory-brief-switches "-CFh"
+      list-directory-verbose-switches "-lh")
+
 (defun dired-xdg-open-file ()
   "Opens the current file in a Dired buffer."
   (interactive)

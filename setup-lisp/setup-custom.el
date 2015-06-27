@@ -44,8 +44,6 @@
  '(gdb-many-windows t)
  '(gdb-show-main t)
  '(highlight-symbol-idle-delay 2)
- '(list-directory-brief-switches "-CFh")
- '(list-directory-verbose-switches "-lh")
  '(nxml-sexp-element-flag t)
  '(org-export-author-info nil)
  '(org-export-creator-info nil)
