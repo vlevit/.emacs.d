@@ -22,3 +22,5 @@ newsticker/
 /my-feeds.el
 /places
 /.twittering-mode
+/recentf
+/ido.last
