@@ -1,5 +1,5 @@
 (require 'find-projects)
 
-(setq find-projects-dirs '("~/projects" "~/work/josh"))
+(setq find-projects-dirs '("~/projects" "~/work/josh" "~/work/dominic"))
 
-(provide 'setup-projects)
+(provide 'setup-find-projects)
