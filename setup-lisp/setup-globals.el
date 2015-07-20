@@ -4,16 +4,17 @@
 (tool-bar-mode -1)                   ; turn off toolbar
 (scroll-bar-mode -1)                 ; turn off scrollbar
 (menu-bar-mode -1)                   ; turn off menubar
-;; (server-mode 1)                      ; now emacsclient runs server
 
+(setq visible-bell t)
+(set-default 'indicate-empty-lines t)
 ;; (setq debug-on-error t)                 ; enable backtrace on start
 ;; (desktop-save-mode 1)                ; save desktop across sessions
 (setq x-select-enable-clipboard t)   ; make emacs yank work with clipboard
 (savehist-mode 1)                    ; save mini-buffer history across sessions
 (setq history-length 100)            ; max length of all history lists
 (setq initial-scratch-message nil)   ; no message in *scratch*
-(setq inhibit-startup-message t)     ; disable startup message
-(setq inhibit-splash-screen t)       ; disable splash screen
+(setq inhibit-startup-message t      ; disable startup message
+      inhibit-splash-screen t)       ; disable splash screen
 (transient-mark-mode 1)              ; highlight text selection
 (show-paren-mode 1)                  ; turn on paren match highlighting
 (line-number-mode 1)      ; make line number appear in the mode line
@@ -21,9 +22,9 @@
 (cua-selection-mode 1)
 (delete-selection-mode 1)
 ; (set-default-font "DejaVu Sans Mono")         ; set default font to DejaVu Sans Mono
-(setq word-wrap t)
-(setq fill-column 70)
-(setq comment-style 'multi-line)
+(setq word-wrap t
+      fill-column 70
+      comment-style 'multi-line)
 (recentf-mode 1)                              ; recent files
 (setq recentf-max-saved-items 100)            ; save last 100 recent files
 (setq recentf-keep '(file-remote-p file-readable-p))
