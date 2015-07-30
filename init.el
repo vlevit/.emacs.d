@@ -8,7 +8,9 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-(server-start)
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
 (require 'setup-globals)
 (require 'setup-package)
