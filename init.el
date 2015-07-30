@@ -19,6 +19,7 @@
 (require 'setup-auto-compile)              ; compile setup-*el on save
 (require 'setup-auto-zip)
 (require 'setup-hippie-expand)
+(require 'setup-grep)
 (require 'setup-spell)
 (require 'setup-lang)
 (require 'setup-insert-date)
