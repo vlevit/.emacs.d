@@ -8,7 +8,7 @@
   (whitespace-mode)
 
   ;; disable auto-fill-mode
-  (when (and (boundp 'auto-fill-mode) auto-fill-mode)
+  (when auto-fill-function
     (auto-fill-mode -1))
 
   ;; visually wrap text at fill-column
