@@ -39,6 +39,7 @@
 (require 'setup-conservative-ergomap)
 (require 'setup-chord-keys)
 (require 'setup-color-theme)
+(require 'setup-visual-line)
 (require 'setup-vline)
 (require 'pos-tip)
 (require 'setup-marks)                     ; marker-visit, auto-mark

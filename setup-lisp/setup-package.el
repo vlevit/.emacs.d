@@ -84,6 +84,7 @@
                       sws-mode
                       visual-regexp
                       vline
+                      visual-fill-column
                       web-mode
                       weblogger
                       wgrep
