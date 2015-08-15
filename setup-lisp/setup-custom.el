@@ -118,6 +118,4 @@
  '(flyspell-incorrect ((t (:underline "goldenrod"))))
  '(header-line ((t (:foreground "#657b83" :weight bold))))
  '(highlight-symbol-face ((t (:weight semi-bold))))
- '(sr-directory-face ((t (:foreground "blue1" :weight thin))) nil "not bold")
- '(whitespace-line ((t (:foreground "red"))))
- '(whitespace-tab ((((class color) (background light)) (:background "gray98" :foreground "aquamarine3")))))
+ '(sr-directory-face ((t (:foreground "blue1" :weight thin))) nil "not bold"))

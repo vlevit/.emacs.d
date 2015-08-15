@@ -1,24 +1,21 @@
 (require 'fill-column-indicator)
 
-(setq whitespace-style (quote
-  (face newline tabs newline-mark)))
+(setq whitespace-style '(face trailing tabs))
 
-;; make whitespace-mode use “¶” for newline and “▷” for tab.
-;; together with the rest of its defaults
 (setq whitespace-display-mappings
- '(
-   (space-mark 32 [183] [46]) ; normal space
-   (space-mark 160 [164] [95])
-   (space-mark 2208 [2212] [95])
-   (space-mark 2336 [2340] [95])
-   (space-mark 3616 [3620] [95])
-   (space-mark 3872 [3876] [95])
-   (newline-mark 10 [182 10]) ; newlne
-   (tab-mark 9 [9655 9] [92 9]) ; tab
-))
+      '((space-mark 32 [183])            ; normal space
+        (newline-mark 10 [?↷ 10])))      ; newline
+
 (setq whitespace-line-column 79)
-;; (global-whitespace-mode 1)
+
+(eval-after-load 'whitespace
+  (lambda ()
+    (set-face-attribute 'whitespace-newline nil :foreground "#d3d7cf")
+    (set-face-attribute 'whitespace-tab nil :background "#eeeeec")
+    (set-face-attribute 'whitespace-trailing nil :background nil :underline "#a40000")))
 
 (defun whitespace-post-command-hook() nil) ; workaround for cursor slowdown
+
+(add-hook 'prog-mode-hook 'whitespace-mode)
 
 (provide 'setup-whitespace)

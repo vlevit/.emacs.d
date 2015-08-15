@@ -32,8 +32,6 @@
          (font-lock-syntactic-face-function
           . python-font-lock-syntactic-face-function)))
   (setq fill-column 79)
-  (set (make-local-variable 'whitespace-style)
-       (quote (face newline tabs newline-mark)))
   (define-key python-mode-map (kbd "M-g M-t") 'my-show-tags)
   (define-key python-mode-map (kbd "M-n") 'python-nav-forward-statement)
   (define-key python-mode-map (kbd "M-p") 'python-nav-backward-statement)
