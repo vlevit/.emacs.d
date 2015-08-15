@@ -121,5 +121,7 @@
 
 (add-hook 'message-send-mail-hook 'choose-msmtp-account)
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
+(add-hook 'mu4e-view-mode-hook 'visual-line-mode)
+(add-hook 'mu4e-view-mode-hook (lambda () (setq fill-column 80)))
 
 (provide 'setup-mu4e)
