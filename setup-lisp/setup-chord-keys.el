@@ -18,6 +18,8 @@
 (key-seq-define-global "qk" 'mu4e)
 (key-seq-define-global "qn" (lambda () (interactive) (mu4e-headers-jump-bookmark ?u)))
 (key-seq-define-global "qi" 'twit)
+(key-seq-define-global "qr" 'point-to-register)
+(key-seq-define-global "jr" 'jump-to-register)
 
 (key-seq-define-global ",s" 'transpose-symbols)
 (key-seq-define-global ",w" 'transpose-words)
