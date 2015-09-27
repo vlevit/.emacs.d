@@ -15,6 +15,7 @@
 (key-seq-define-global "qg" 'magit-status)
 (key-seq-define-global "qs" 'idomenu)
 (key-seq-define-global "qb" 'ido-switch-buffer)
+(key-seq-define-global "qv" 'clone-buffer)
 (key-seq-define-global "qk" 'mu4e)
 (key-seq-define-global "qn" (lambda () (interactive) (mu4e-headers-jump-bookmark ?u)))
 (key-seq-define-global "qi" 'twit)
