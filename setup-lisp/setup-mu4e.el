@@ -94,6 +94,14 @@
         (let ((addr (cdr (car (mu4e-message-field msg :to)))))
           (setq user-mail-address addr))))))
 
+(add-hook 'mu4e-compose-mode-hook
+  (defun my-mu4e-visual-line-reply ()
+    "Activate visual-line-mode for specific services like GitHub."
+    (let ((msg mu4e-compose-parent-message))
+      (when (and msg (mu4e-message-contact-field-matches
+                      msg :from '(".*@github.com$" ".*@upwork.com$")))
+        (visual-line-mode)))))
+
 ;; source: http://zmalltalker.com/linux/mu.html#sec-1-2-1
 (defun choose-msmtp-account ()
   (if (message-mail-p)
