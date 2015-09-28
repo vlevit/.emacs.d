@@ -18,6 +18,7 @@
 (key-seq-define-global "qv" 'clone-buffer)
 (key-seq-define-global "qk" 'mu4e)
 (key-seq-define-global "qn" (lambda () (interactive) (mu4e-headers-jump-bookmark ?u)))
+(key-seq-define-global "ql" 'my-visual-line-mode-toggle)
 (key-seq-define-global "qi" 'twit)
 (key-seq-define-global "qr" 'point-to-register)
 (key-seq-define-global "jr" 'jump-to-register)
