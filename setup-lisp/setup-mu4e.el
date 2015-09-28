@@ -15,7 +15,8 @@
       mu4e-html2text-command 'mu4e-shr2text
       mu4e-msg2pdf "/usr/bin/msg2pdf"
       mu4e-compose-signature "Sent with mu4e -> message-mode -> emacs -> msmtp -> postfix"
-      mu4e-compose-signature-auto-include nil)
+      mu4e-compose-signature-auto-include nil
+      mu4e-compose-dont-reply-to-self t)
 
 (setq mu4e-sent-folder "/me/Sent"
       mu4e-trash-folder "/me/Trash"
@@ -45,7 +46,15 @@
      (user-full-name "Slava"))))
 
 (setq mu4e-user-mail-address-list
-      `(,(@vlevit "me") ,(@gmail "levit.slava") ,(@gmail "alex.dyadya")))
+      `(,(@vlevit "me")
+        ,(@vlevit "dev")
+        ,(@vlevit "admin")
+        ,(@vlevit "postmaster")
+        ,(@vlevit "work")
+        ,(@vlevit "bulk")
+        ,(@vlevit "red")
+        ,(@gmail "levit.slava")
+        ,(@gmail "alex.dyadya")))
 
 (setq mu4e-maildir-shortcuts
       '(("/me/Inbox" . ?i)
@@ -82,7 +91,8 @@
     "Set the From address based on the To address of the original."
     (let ((msg mu4e-compose-parent-message)) ;; msg is shorter...
       (when (and msg (mu4e-message-contact-field-matches msg :to (@vlevit ".*")))
-        (setq user-mail-address (mu4e-message-field :to))))))
+        (let ((addr (cdr (car (mu4e-message-field msg :to)))))
+          (setq user-mail-address addr))))))
 
 ;; source: http://zmalltalker.com/linux/mu.html#sec-1-2-1
 (defun choose-msmtp-account ()
