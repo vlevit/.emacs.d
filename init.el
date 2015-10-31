@@ -15,7 +15,7 @@
 (require 'setup-globals)
 (require 'setup-package)
 (require 'setup-scroll)                    ; conservative scrolling
-(require 'setup-whereami)                  ; setup-home and setup-at-work
+(require 'setup-whereami)                  ; setup-home and setup-at-*
 (require 'setup-defuns)
 (require 'setup-face)
 (require 'setup-auto-compile)              ; compile setup-*el on save
@@ -63,9 +63,10 @@
 (require 'setup-ido)                       ; recentf, imenu
 (require 'setup-visual-regexp)
 (require 'setup-sunrise-commander)         ; ido
-(require 'setup-mu4e)
-(require 'setup-mu4e-maildir-extension)
-(require 'setup-mu4e-feeds)
+(unless (my-at-ironscales)
+  (require 'setup-mu4e)
+  (require 'setup-mu4e-maildir-extension)
+  (require 'setup-mu4e-feeds))
 (require 'setup-shell)                     ; shell-command, bash-completion
 (require 'setup-multiple-async-shell-commands)
 (require 'setup-man)
