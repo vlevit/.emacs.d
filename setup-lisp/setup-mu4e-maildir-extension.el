@@ -14,7 +14,8 @@
         "/alex.dyadya/Inbox"
         "/spnest/Inbox"
 
-        "/feeds/personal/*"))
+        "/feeds/personal/*"
+        "/feeds/github/*"))
 
 (mu4e-maildirs-extension)
 

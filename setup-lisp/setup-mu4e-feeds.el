@@ -9,6 +9,7 @@
     "maildir:/feeds/humor*"
     "maildir:/feeds/jobs*"
     "maildir:/feeds/opennet*"
+    "maildir:/feeds/twitter*"
     ))
 
 (defvar my-mu4e-counter 0)
