@@ -63,17 +63,27 @@ command and whose cdr is options."
   (let ((top-dir (magit-get-top-dir)))
     (if (not top-dir)
         (message "File is not in a git repo")
-      (let ((staged-files (vlblog-staged-files))
-            (log-message (format "Content: %s blog" (vblog-from-filename (buffer-file-name)))))
-        (if (and staged-files
-                 (not (equal (list (substring (buffer-file-name) (length top-dir))) staged-files)))
-            (message "There are some uncommited files")
-          (magit-run-git "add" (buffer-file-name))
-          (kill-new log-message)
-          (setq vlblog-log-message log-message)
-          (with-temp-buffer
-            (cd top-dir)
-            (magit-commit)))))))
+      (if (buffer-modified-p)
+          (message "Current buffer is modified. Save it first.")
+        (let ((staged-files (vlblog-staged-files))
+              (log-message (format "Content: %s blog" (vblog-from-filename (buffer-file-name)))))
+          (if (and staged-files
+                   (not (equal (list (substring (buffer-file-name) (length top-dir))) staged-files)))
+              (message "There are some uncommited files")
+            ;; update publish date
+            (shell-command
+             (concat "vlblog expand_published "
+                     (string-join
+                      (mapcar 'shell-quote-argument
+                              (mapcar (lambda (f) (concat top-dir "/" f))
+                                      staged-files)) " ")))
+            (revert-buffer nil t)
+            (magit-run-git "add" (buffer-file-name))
+            (kill-new log-message)
+            (setq vlblog-log-message log-message)
+            (with-temp-buffer
+              (cd top-dir)
+              (magit-commit))))))))
 
 (defun vlblog-log-insert-message ()
   (message "vlblog-log-insert-message")
