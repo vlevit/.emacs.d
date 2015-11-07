@@ -75,6 +75,7 @@
         ("date:today..now" "Today's messages" ?t)
         ("maildir:/me/* AND NOT maildir:/me/Sent AND NOT maildir:/me/Trash" "me" ?i)
         ("flag:unread AND maildir:/feeds/*" "Feeds" ?f)
+        ("maildir:/feeds/*" "Feeds" ?F)
         ("date:7d..now AND NOT maildir:/feeds/" "Last 7 days" ?w)))
 
 (add-to-list 'mu4e-view-actions
