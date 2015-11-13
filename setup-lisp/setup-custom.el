@@ -33,8 +33,10 @@
      (output-dvi "xdvi")
      (output-pdf "xdg-open")
      (output-html "xdg-open"))))
- '(ac-auto-show-menu 2.0)
- '(column-number-mode t)
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#657b83" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#fdf6e3"))
  '(desktop-path (quote ("~/.emacs.d/" "." "~")))
  '(dired-listing-switches "-lAhX --group-directories-first")
  '(ecb-tip-of-the-day nil)
@@ -93,6 +95,7 @@
      (LaTeX-command-style
       ("" "(latex) %(extraopts) %S%(PDFout)"))
      (sgml-basic-offset . 4)
+     (vlblog-file-p . t)
      (blog-file-p . t)
      (ispell-dictionary . "ukrainian"))))
  '(send-mail-function nil)
@@ -101,11 +104,7 @@
  '(sr-listing-switches "--time-style=locale --group-directories-first -AlDhgGX")
  '(sr-loop-use-popups nil)
  '(sr-virtual-listing-switches "-al --group-directories-first")
- '(tramp-remote-process-environment
-   (quote
-    ("HISTFILE=$HOME/.tramp_history" "HISTSIZE=1" "LC_ALL=" "TERM=dumb" "EMACS=t" "INSIDE_EMACS='23.3.1,tramp:2.1.20'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "autocorrect=" "correct=")))
  '(use-dialog-box nil)
- '(user-full-name "Slava Levit")
  '(vc-annotate-background "white"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
