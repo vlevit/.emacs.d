@@ -21,6 +21,7 @@
                       auto-complete
                       autopair
                       bash-completion
+                      beacon
                       bm
                       coffee-mode
                       color-theme
