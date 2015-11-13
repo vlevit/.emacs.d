@@ -14,7 +14,7 @@
 
 (require 'setup-globals)
 (require 'setup-package)
-(require 'setup-scroll)                    ; conservative scrolling
+(require 'setup-scroll)                    ; beacon-mode
 (require 'setup-whereami)                  ; setup-home and setup-at-*
 (require 'setup-defuns)
 (require 'setup-face)
