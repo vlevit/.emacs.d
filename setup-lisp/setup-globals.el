@@ -26,8 +26,8 @@
       fill-column 70
       comment-style 'multi-line)
 (recentf-mode 1)                              ; recent files
-(setq recentf-max-saved-items 100)            ; save last 100 recent files
-(setq recentf-keep '(file-remote-p file-readable-p))
+(setq recentf-max-saved-items 200             ; save last 200 recent files
+      recentf-exclude '(file-remote-p "/media/"))
 ; (setq x-meta-keysym 'alt)
 ; (setq x-alt-keysym 'meta)
 (setq sentence-end-double-space nil)
