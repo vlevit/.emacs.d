@@ -32,6 +32,12 @@
      (mu4e-drafts-folder "/me/Drafts")
      (user-mail-address ,(@vlevit "me"))
      (user-full-name "Vyacheslav Levit"))
+    ("levit.slava"
+     (mu4e-sent-folder "/levit.slava/Sent")
+     (mu4e-trash-folder "/levit.slava/Trash")
+     (mu4e-drafts-folder "/levit.slava/Drafts")
+     (user-mail-address ,(@gmail "levit.slava"))
+     (user-full-name "Vyacheslav Levit"))
     ("alex.dyadya"
      (mu4e-sent-folder "/alex.dyadya/Sent")
      (mu4e-trash-folder "/alex.dyadya/Trash")
