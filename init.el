@@ -13,6 +13,7 @@
   (server-start))
 
 (require 'setup-globals)
+(require 'setup-private nil t)
 (require 'setup-package)
 (require 'setup-scroll)                    ; beacon-mode
 (require 'setup-whereami)                  ; setup-home and setup-at-*

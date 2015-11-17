@@ -24,3 +24,4 @@ newsticker/
 /.twittering-mode
 /recentf
 /ido.last
+/setup-lisp/setup-private.el

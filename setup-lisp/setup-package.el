@@ -69,6 +69,7 @@
                       multiple-cursors
                       mwe-log-commands
                       names
+                      paradox
                       paredit
                       paredit-everywhere
                       perspective
