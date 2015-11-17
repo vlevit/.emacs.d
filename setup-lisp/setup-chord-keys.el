@@ -10,7 +10,7 @@
 (key-seq-define-global "qo" 'other-window)
 (key-seq-define-global "qf" 'ido-find-file)
 (key-seq-define-global "qh" 'find-file-in-repository)
-(key-seq-define-global "qj" 'find-projects)
+(key-seq-define-global "qj" 'find-projects-2)
 (key-seq-define-global "qd" 'sunrise-cd)
 (key-seq-define-global "qg" 'magit-status)
 (key-seq-define-global "qs" 'idomenu)
@@ -22,6 +22,7 @@
 (key-seq-define-global "qi" 'twit)
 (key-seq-define-global "qr" 'point-to-register)
 (key-seq-define-global "jr" 'jump-to-register)
+(key-seq-define-global "jx" 'swiper)
 
 (key-seq-define-global ",s" 'transpose-symbols)
 (key-seq-define-global ",w" 'transpose-words)

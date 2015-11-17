@@ -82,6 +82,7 @@
                       scratch
                       smartparens
                       smex
+                      swiper
                       sws-mode
                       visual-regexp
                       vline
