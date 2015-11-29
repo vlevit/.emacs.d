@@ -1,23 +1,31 @@
-(defvar find-projects-dirs nil)
+(defvar find-projects-patterns nil
+  "")
+
+(defvar find-projects-completing-read-function 'completing-read
+  "")
+
+;; (setq find-projects-completing-read-function 'ido-completing-read)
+;; (setq find-projects-completing-read-function 'completing-read-default)
+;; (setq find-projects-completing-read-function 'ivy-completing-read)
+
+(defvar find-projects-action 'find-file-in-repository)
+;; (setq find-projects-action 'find-file-in-repository)
+;; (setq find-projects-action 'find-file-in-project)
+
+;; (setq find-projects-action 'dired-jump)
+
+(defun find-projects-matched-dirs (pattern)
+  (cl-remove-if-not 'file-directory-p (file-expand-wildcards pattern)))
 
 (defun find-projects ()
-  "Select a project from `find-projects-dirs'"
+  "Select a project from `find-projects-patterns'"
   (interactive)
-  (let ((rel-dirs nil)
-        (dirs-alist nil))
-    (dolist (project-dir find-projects-dirs)
-      (let* ((base-dir (expand-file-name project-dir))
-             (full-dirs (cl-remove-if-not 'file-directory-p (directory-files base-dir t "^[^.]"))))
-        (unless (s-ends-with? base-dir "/")
-          (setq base-dir (concat base-dir "/")))
-        (dolist (full-dir full-dirs)
-          (let ((rel-dir (substring full-dir (length base-dir))))
-            (add-to-list 'rel-dirs rel-dir)
-            (add-to-list 'dirs-alist (cons rel-dir full-dir))))))
-    (let ((selected-dir (ido-completing-read "Projects: " rel-dirs))
-          (directory default-directory))
+    (let* ((projects
+            (cl-reduce 'append (mapcar 'find-projects-matched-dirs find-projects-patterns)))
+           (selected-project
+            (funcall find-projects-completing-read-function "Projects: " projects)))
       (with-temp-buffer
-        (cd (cdr (assoc selected-dir dirs-alist)))
-        (find-file-in-repository)))))
+        (cd selected-project)
+        (funcall find-projects-action))))
 
 (provide 'find-projects)
