@@ -65,6 +65,7 @@
                       key-seq
                       magit
                       markdown-mode
+                      lispy
                       mu4e-maildirs-extension
                       multiple-cursors
                       mwe-log-commands
