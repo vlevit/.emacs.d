@@ -40,7 +40,9 @@
   (define-key python-mode-map (kbd "M-.") 'jedi:goto-definition)
   (define-key python-mode-map (kbd "M-,") 'jedi:goto-definition-pop-marker)
   (whitespace-mode 1)
-  (fci-mode 1))
+  (fci-mode 1)
+  ;; https://debbugs.gnu.org/cgi/bugreport.cgi?bug=21220
+  (remove-hook 'python-mode-hook 'wisent-python-default-setup))
   ;; (my-highlight-indetation))
 
 (add-hook 'python-mode-hook 'my-python-mode-hook)
