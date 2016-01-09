@@ -26,8 +26,9 @@
 (global-set-key (kbd "M-F") 'find-file-at-point)
 (global-set-key (kbd "C-S-r") 'revert-buffer)
 (global-set-key (kbd "C-`") 'ibuffer)
+
+(global-set-key (kbd "M-~") 'ivy-recentf)
 (global-set-key (kbd "C-S-o") 'recentf-open-files)
-(global-set-key (kbd "C-S-e") 'ecb-minor-mode)
 
 (global-set-key (kbd "<C-f7>") 'next-error)
 (global-set-key (kbd "<C-S-f7>") 'previous-error)
