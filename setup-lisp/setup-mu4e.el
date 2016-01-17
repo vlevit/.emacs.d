@@ -9,6 +9,7 @@
 (setq mu4e-maildir "~/Maildir"
       mu4e-attachment-dir "~/Attachments"
       mu4e-change-filenames-when-moving t
+      mu4e-headers-show-threads nil
       mu4e-headers-results-limit 50
       mu4e-view-html-plaintext-ratio-heuristic 10
       mu4e-view-show-addresses t
