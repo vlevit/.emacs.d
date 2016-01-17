@@ -15,6 +15,7 @@
 
 (define-key ergomap-keymap (kbd "C-x C-a") 'ffap)
 (global-set-key (kbd "C-`") 'ibuffer)
+(define-key ergomap-keymap (kbd "M-~") 'ivy-recentf)
 
 (define-key ergomap-keymap (kbd "M-H") 'mark-line)
 (define-key ergomap-keymap (kbd "M-?") 'hippie-expand)
