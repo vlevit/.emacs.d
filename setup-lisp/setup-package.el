@@ -8,9 +8,9 @@
 (package-initialize)
 
 (defun packages-install (packages)
-  (--each packages
-    (when (not (package-installed-p it))
-      (package-install it)))
+  (dolist (package packages)
+    (when (not (package-installed-p package))
+      (package-install package)))
   (delete-other-windows))
 
 (defun init--install-packages ()
@@ -46,10 +46,8 @@
                       flymake-cursor
                       flymake-easy
                       fringe-helper
-                      git-commit-mode
                       git-gutter
                       git-gutter-fringe
-                      git-rebase-mode
                       hexrgb
                       highlight-symbol
                       idomenu

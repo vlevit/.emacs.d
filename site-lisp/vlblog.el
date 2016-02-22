@@ -91,7 +91,7 @@ command and whose cdr is options."
   (insert vlblog-log-message)
   (setq vlblog-log-message nil))
 
-(add-hook 'git-commit-mode-hook 'vlblog-log-insert-message)
+;; (add-hook 'git-commit-mode-hook 'vlblog-log-insert-message)
 
 (defun vlblog-publish ()
   (interactive)
