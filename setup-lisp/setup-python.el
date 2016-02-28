@@ -46,34 +46,7 @@
   ;; (my-highlight-indetation))
 
 (add-hook 'python-mode-hook 'my-python-mode-hook)
-
-(when (load "flymake" t)
-
-  (defun my-flymake-save-buffer-in-file (file-name)
-    ;; (make-directory (file-name-directory file-name) 1)
-    (write-region nil nil file-name nil 566)
-    (flymake-log 3 "saved buffer %s in file %s" (buffer-name) file-name))
-  
-  (defun my-flymake-init-create-temp-buffer-copy (create-temp-f)
-  "Make a temporary copy of the current buffer, save its name in buffer data and return the name."
-  (let*  ((source-file-name       buffer-file-name)
-	  (temp-source-file-name  (funcall create-temp-f source-file-name "flymake")))
-
-    (my-flymake-save-buffer-in-file temp-source-file-name)
-    (setq flymake-temp-source-file-name temp-source-file-name)
-    temp-source-file-name))
-  
-  (defun flymake-pyflakes-init ()
-    (let* ((temp-file (my-flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-           (local-file (file-relative-name 
-                        temp-file
-                        (file-name-directory buffer-file-name)))) 
-      (list "pycheckers" (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("\\.py\\'" flymake-pyflakes-init))
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("xatk" flymake-pyflakes-init)))
+(add-hook 'python-mode-hook 'flycheck-mode)
 
 ;;; Jedi setup
 

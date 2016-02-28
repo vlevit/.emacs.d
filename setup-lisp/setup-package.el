@@ -42,6 +42,7 @@
                       find-file-in-repository
                       flx
                       flx-ido
+                      flycheck
                       flymake-coffee
                       flymake-cursor
                       flymake-easy
