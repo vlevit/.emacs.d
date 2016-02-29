@@ -33,6 +33,14 @@
 (key-seq-define-global ",c" 'transpose-chars)
 (key-seq-define-global ",r" 'transpose-params)
 
+;; typography
+(key-seq-define text-mode-map " -" (kbd " — "))
+(key-seq-define text-mode-map "``" (kbd "“"))
+(key-seq-define text-mode-map "''" (kbd "”"))
+(key-seq-define text-mode-map "<<" (kbd "«"))
+(key-seq-define text-mode-map ">>" (kbd "»"))
+(key-seq-define text-mode-map "`'" (kbd "́"))
+
 (key-chord-mode 1)
 
 (require 'iy-go-to-char)
