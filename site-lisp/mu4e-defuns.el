@@ -4,7 +4,7 @@
          (docid (mu4e-message-field msg :docid))
          (markdesc (cdr (assq 'read mu4e-marks)))
          (action (plist-get markdesc :action)))
-    (funcall action docid nil)
+    (funcall action docid nil nil)
     (mu4e-headers-next)))
 
 (defun mu4e-headers-jump-bookmark (kar)
