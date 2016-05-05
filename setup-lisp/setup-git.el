@@ -5,7 +5,8 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x C-g") 'magit-status)
 
-(setq magit-diff-refine-hunk t)
+(setq magit-diff-refine-hunk t
+      magit-status-expand-stashes nil)
 
 (define-key magit-mode-map (kbd "<S-return>")
   '(lambda () (interactive) (magit-visit-item 1) (other-window -1)))
