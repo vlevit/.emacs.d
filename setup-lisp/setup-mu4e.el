@@ -18,7 +18,8 @@
       mu4e-msg2pdf "/usr/bin/msg2pdf"
       mu4e-compose-signature "Sent with mu4e -> message-mode -> emacs -> msmtp -> postfix"
       mu4e-compose-signature-auto-include nil
-      mu4e-compose-dont-reply-to-self t)
+      mu4e-compose-dont-reply-to-self t
+      mail-user-agent 'mu4e-user-agent)
 
 (setq mu4e-sent-folder "/me/Sent"
       mu4e-trash-folder "/me/Trash"
@@ -67,6 +68,7 @@
 (setq mu4e-maildir-shortcuts
       '(("/me/Inbox" . ?i)
         ("/me/Personal" . ?p)
+        ("/local" . ?c)
         ("/me/Admin" . ?a)
         ("/me/Dev" . ?d)
         ("/me/Work" . ?w)
@@ -148,7 +150,7 @@
 
 (add-hook 'message-send-mail-hook 'choose-msmtp-account)
 (add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
-(add-hook 'mu4e-view-mode-hook 'visual-line-mode)
+;; (add-hook 'mu4e-view-mode-hook 'visual-line-mode)
 (add-hook 'mu4e-view-mode-hook (lambda () (setq fill-column 80)))
 
 (provide 'setup-mu4e)

@@ -6,6 +6,8 @@
         "/me/Admin"
         "/me/Dev"
         "/me/Work"
+        "/me/Work/.Admin"
+        "/me/Work/.Management"
         "/me/Bulk"
         "/me/Junk"
         "/me/Trash"
@@ -13,6 +15,8 @@
 
         "/alex.dyadya/Inbox"
         "/spnest/Inbox"
+
+        "/local"
 
         "/feeds/personal/*"
         "/feeds/github/*"))
