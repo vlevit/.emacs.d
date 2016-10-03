@@ -27,6 +27,7 @@
                       color-theme
                       color-theme-solarized
                       concurrent
+                      counsel
                       ctable
                       dash
                       deferred
