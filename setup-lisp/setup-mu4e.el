@@ -146,11 +146,16 @@
   (split-window nil nil "right")
   (follow-mode))
 
+(defun my-mu4e-bury ()
+  (interactive)
+  (winner-undo)
+  (bury-buffer " *mu4e-main*"))
+
 (advice-add 'mu4e~headers-update-handler :before 'my-mu4e-update-handler)
 
 (define-key mu4e-headers-mode-map "r" 'mu4e-mark-as-read)
 (define-key mu4e-headers-mode-map "e" 'mu4e-headers-search-edit)
-(define-key mu4e-main-mode-map "q" 'bury-buffer)
+(define-key mu4e-main-mode-map "q" 'my-mu4e-bury)
 (define-key mu4e-view-mode-map "l" 'mu4e-view-toggle-plaintext)
 (define-key mu4e-view-mode-map (kbd "<tab>") 'shr-next-link)
 (define-key mu4e-view-mode-map "f" 'mu4e-shr-browse-last-url)
