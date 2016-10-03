@@ -139,6 +139,13 @@
         (unless (string-prefix-p "/feeds/" maildir)
           (start-process "checkmail" nil "checkmail" "--update"))))))
 
+(defun my-mu4e ()
+  (interactive)
+  (delete-other-windows)
+  (mu4e)
+  (split-window nil nil "right")
+  (follow-mode))
+
 (advice-add 'mu4e~headers-update-handler :before 'my-mu4e-update-handler)
 
 (define-key mu4e-headers-mode-map "r" 'mu4e-mark-as-read)
