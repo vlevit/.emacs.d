@@ -139,16 +139,18 @@
         (unless (string-prefix-p "/feeds/" maildir)
           (start-process "checkmail" nil "checkmail" "--update"))))))
 
+(defvar my-mu4e-window-configuration nil)
+
 (defun my-mu4e ()
   (interactive)
-  (delete-other-windows)
+  (unless (equal (buffer-name) " *mu4e-main*")
+    (window-configuration-to-register ?m))
   (mu4e)
-  (split-window nil nil "right")
-  (follow-mode))
+  (follow-delete-other-windows-and-split))
 
 (defun my-mu4e-bury ()
   (interactive)
-  (winner-undo)
+  (jump-to-register ?m)
   (bury-buffer " *mu4e-main*"))
 
 (advice-add 'mu4e~headers-update-handler :before 'my-mu4e-update-handler)
