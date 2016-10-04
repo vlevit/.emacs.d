@@ -86,7 +86,7 @@
         ("maildir:/me/* AND NOT maildir:/me/Sent AND NOT maildir:/me/Trash" "me" ?i)
         ("flag:unread AND maildir:/feeds/*" "Feeds" ?f)
         ("maildir:/feeds/*" "Feeds" ?F)
-        ("date:7d..now AND NOT maildir:/feeds/" "Last 7 days" ?w)))
+        ("maildir:/Work OR maildir:/ironscales/*" "Work" ?w)))
 
 (add-to-list 'mu4e-view-actions
   '("ViewInBrowser" . mu4e-action-view-in-browser) t)
