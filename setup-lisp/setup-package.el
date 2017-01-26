@@ -80,7 +80,7 @@
                       projectile
                       python-environment
                       rainbow-mode
-                      ripgrep-arguments
+                      ripgrep
                       s
                       scratch
                       smartparens
