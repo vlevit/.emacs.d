@@ -4,3 +4,9 @@
 [submodule "site-lisp/key-seq"]
 	path = site-lisp/key-seq
 	url = git@github.com:vlevit/key-seq.el.git
+[submodule "find-projects"]
+	path = find-projects
+	url = /home/vlevit/.emacs.d/site-lisp/find-projects
+[submodule "site-lisp/find-file-in-repository"]
+	path = site-lisp/find-file-in-repository
+	url = git@github.com:vlevit/find-file-in-repository.git
