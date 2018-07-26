@@ -14,6 +14,7 @@
 
 (require 'setup-globals)
 (require 'setup-private nil t)
+(require 'setup-dir-locals)
 (require 'setup-tls)
 (require 'setup-package)
 (require 'setup-scroll)                    ; beacon-mode
