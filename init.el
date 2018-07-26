@@ -35,7 +35,9 @@
 (require 'setup-mark-whole-line)
 (require 'setup-transpose-symbols)
 (require 'setup-uniquify-buffers)
-(require 'setup-find-projects)
+(require 'find-file-in-project)
+(require 'setup-find-file-in-repository)
+(require 'setup-find-project)
 (require 'setup-save-some-buffers)
 
 (require 'dired)
@@ -52,7 +54,7 @@
 (require 'setup-executable)
 (require 'setup-saveplace)
 (require 'setup-whitespace)                ; fill-column-indicator
-(require 'setup-flymake)
+(require 'setup-flycheck)
 (require 'setup-auto-complete)
 (require 'setup-dired)
 (require 'setup-smartparens)
@@ -65,7 +67,6 @@
 (require 'setup-highlight-symbol)
 (require 'setup-ido)                       ; recentf, imenu
 (require 'setup-visual-regexp)
-(require 'setup-sunrise-commander)         ; ido
 (unless (my-at-ironscales)
   (require 'setup-mu4e)
   (require 'setup-mu4e-maildir-extension)
@@ -77,6 +78,7 @@
 (require 'setup-sudo-edit)
 (require 'vlf)
 
+(require 'setup-ansible)
 (require 'setup-python)                    ; flymake, jedi
 (require 'setup-elisp)
 (require 'setup-c-mode)
@@ -93,7 +95,15 @@
 (require 'setup-vlblog)
 (require 'setup-twitter)
 
+(setq buffer-file-name
+      (expand-file-name (format-time-string "scratch/%Y%m%d%H%M%S") user-emacs-directory))
 (add-hook 'after-init-hook 'auto-save-mode)
 
 (setq custom-file (expand-file-name "setup-custom.el" setup-lisp-dir))
 (load custom-file)
+
+;; http://openwall.com/lists/oss-security/2017/09/11/1
+;; Mitigate Bug#28350 (security) in Emacs 25.2 and earlier.
+(eval-after-load "enriched"
+  '(defun enriched-decode-display-prop (start end &optional param)
+     (list start end)))
