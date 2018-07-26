@@ -13,31 +13,63 @@
         cua-copy-region
         cua-delete-region
         cua-exchange-point-and-mark
+        cua-insert-char-at-global-mark
         cua-paste
         cua-paste-pop
+        cua-resize-rectangle-left
+        cua-scroll-down
+        cua-scroll-up
         cua-set-rectangle-mark
         dabbrev-expand
         delete-indentation
         duplicate-line
         electric-newline-and-maybe-indent
+        end-of-buffer
+        eval-print-last-sexp
+        fill-paragraph
         forward-sentence
         forward-sexp
+        go-mode-insert-and-indent
         highlight-symbol-next
         indent-for-tab-command
         insert-date
+        insert-parentheses
         iy-go-to-char
         iy-go-to-char--command
         iy-go-to-char-backward
         jade-comment-dwim
         jedi:dot-complete
+        jedi:goto-definition
         kill-region
+        kill-ring-save-line
+        lispy-backtick
+        lispy-backward-kill-word
+        lispy-braces
+        lispy-brackets
+        lispy-colon
+        lispy-delete
+        lispy-delete-backward
+        lispy-fill
+        lispy-kill
+        lispy-kill-word
+        lispy-move-beginning-of-line
+        lispy-parens
+        lispy-quotes
+        lispy-tick
+        lispy-yank
+        mark-paragraph
         mark-whole-line
         markdown-demote
         markdown-exdent-or-delete
+        message-beginning-of-line
+        next-buffer
+        org-beginning-of-line
         org-delete-char
         org-end-of-line
         org-force-self-insert
         org-self-insert-command
+        orgtbl-hijacker-command-100
+        orgtbl-self-insert-command
         python-indent-dedent-line-backspace
         python-indent-electric-colon
         sgml-close-tag
@@ -47,6 +79,78 @@
         sp--self-insert-command
         sp-backward-delete-char
         sp-delete-char
+        special-digit-argument
+        special-lh-knight/body
+        special-lispy-ace-char
+        special-lispy-ace-paren
+        special-lispy-ace-subword
+        special-lispy-ace-symbol
+        special-lispy-ace-symbol-replace
+        special-lispy-alt-multiline
+        special-lispy-back
+        special-lispy-barf
+        special-lispy-beginning-of-defun
+        special-lispy-clone
+        special-lispy-convolute
+        special-lispy-different
+        special-lispy-down
+        special-lispy-down-slurp
+        special-lispy-edebug-stop
+        special-lispy-ediff-regions
+        special-lispy-eval
+        special-lispy-eval-and-insert
+        special-lispy-eval-other-window
+        special-lispy-flow
+        special-lispy-follow
+        special-lispy-goto
+        special-lispy-goto-def-ace
+        special-lispy-goto-def-down
+        special-lispy-goto-elisp-commands
+        special-lispy-goto-local
+        special-lispy-goto-mode
+        special-lispy-goto-projectile
+        special-lispy-goto-recursive
+        special-lispy-join
+        special-lispy-left
+        special-lispy-mark-list
+        special-lispy-move-down
+        special-lispy-move-left
+        special-lispy-move-right
+        special-lispy-move-up
+        special-lispy-narrow
+        special-lispy-new-copy
+        special-lispy-occur
+        special-lispy-oneline
+        special-lispy-other-mode
+        special-lispy-other-space
+        special-lispy-outline-goto-child
+        special-lispy-outline-next
+        special-lispy-outline-prev
+        special-lispy-paste
+        special-lispy-quit
+        special-lispy-raise
+        special-lispy-raise-some
+        special-lispy-repeat
+        special-lispy-right
+        special-lispy-shifttab
+        special-lispy-slurp
+        special-lispy-space
+        special-lispy-splice
+        special-lispy-stringify
+        special-lispy-tab
+        special-lispy-teleport
+        special-lispy-tilde
+        special-lispy-underscore
+        special-lispy-undo
+        special-lispy-up
+        special-lispy-up-slurp
+        special-lispy-view
+        special-lispy-visit
+        special-lispy-widen
+        special-lispy-x
+        special-pop-tag-mark
+        special-swiper
+        string-inflection-cycle
         tab-to-tab-stop
         transpose-symbols
         transpose-words
@@ -61,14 +165,36 @@
 
 (setq mc/cmds-to-run-once
       '(
+        bm-next
+        copy-to-register
+        cua-clear-rectangle-mark
         cua-cut-region
+        cua-resize-rectangle-up
+        delete-window
         dired-copy-filename-as-kill
+        dired-previous-line
         eval-expression
+        find-file-in-repository
+        highlight-symbol-prev
+        ido-switch-buffer
         iflipb-next-buffer
+        jedi:goto-definition-pop-marker
+        linum-mode
+        lispy-backward
+        lispy-comment
+        lispy-cursor-down
+        lispy-hash
+        lispy-move-end-of-line
         my-create-fake-cursor
+        my-show-tags
+        my-visual-line-mode-toggle
+        next-error
+        org-cycle
         overwrite-mode
         save-some-buffers
         smex
         toggle-truncate-lines
+        undefined
+        wdired-finish-edit
         yaml-electric-dash-and-dot
         ))
