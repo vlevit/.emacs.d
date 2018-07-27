@@ -46,6 +46,9 @@
  '(gdb-many-windows t)
  '(gdb-show-main t)
  '(highlight-symbol-idle-delay 2)
+ '(magit-cherry-pick-arguments (quote ("-x")))
+ '(magit-merge-arguments (quote ("--no-ff")))
+ '(magit-rebase-arguments (quote ("--autostash")))
  '(nxml-sexp-element-flag t)
  '(org-export-author-info nil)
  '(org-export-creator-info nil)
@@ -83,9 +86,13 @@
  '(org-export-with-timestamps nil)
  '(org-footnote-define-inline nil)
  '(org-footnote-section nil)
+ '(package-selected-packages
+   (quote
+    (ansible python-docstring dockerfile-mode swiper ivy pyimpsort pyimport elm-mode jade rg js2-mode rjsx-mode counsel move-dup ox-twbs yaml-mode windsize window-layout which-key wgrep weblogger web-mode vline vlf visual-regexp visual-fill-column vimgolf twittering-mode tiny sws-mode string-inflection smex smartparens scratch rainbow-mode projectile pos-tip perspective persp-mode paredit-everywhere paradox mwe-log-commands mu4e-maildirs-extension markdown-mode magit lispy less-css-mode key-seq key-combo jump-char js2-refactor jinja2-mode jedi-direx jade-mode iy-go-to-char iflipb idomenu highlight-symbol hexrgb go-mode git-gutter-fringe flymake-cursor flymake-coffee flycheck-package flx-ido find-file-in-project fill-column-indicator expand-region eproject elfeed dired-rainbow dired+ crontab-mode color-theme-solarized coffee-mode bm beacon bash-completion autopair auctex anything anti-zenburn-theme aggressive-indent)))
  '(safe-local-variable-values
    (quote
-    ((ispell-dictionary . english)
+    ((js2-basic-offset . 2)
+     (ispell-dictionary . english)
      (LaTeX-command-style
       ("" "xelatex %S"))
      (LaTeX-command-style
@@ -111,6 +118,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(diff-added ((t (:background "#DDFFDD" :inverse-video nil :foreground "#657b83" :weight normal))))
+ '(diff-file-header ((t (:weight bold :background "#DDDDFF"))))
+ '(diff-header ((t (:background "#F8E9AE"))))
+ '(diff-refine-changed ((t (:foreground "#657b83" :weight normal))))
+ '(diff-removed ((t (:background "#FFDDDD" :inverse-video nil :foreground "#657b83" :weight normal))))
  '(flycheck-fringe-warning ((t (:inherit warning :foreground "#729fcf"))))
  '(flycheck-warning ((t (:underline (:color "#729fcf" :style wave)))))
  '(flymake-errline ((((class color) (background light)) (:underline "pink"))))
@@ -119,4 +131,5 @@
  '(flyspell-incorrect ((t (:underline "goldenrod"))))
  '(header-line ((t (:foreground "#657b83" :weight bold))))
  '(highlight-symbol-face ((t (:weight semi-bold))))
- '(sr-directory-face ((t (:foreground "blue1" :weight thin))) nil "not bold"))
+ '(sr-directory-face ((t (:foreground "blue1" :weight thin))) nil "not bold")
+ '(variable-pitch ((t (:family "Monospace")))))
