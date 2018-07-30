@@ -27,6 +27,7 @@
 (key-seq-define-global "jr" 'jump-to-register)
 (key-seq-define-global "jx" 'swiper)
 (key-seq-define-global "jz" 'counsel-rg)
+(key-seq-define-global "jc" 'rg-dwim)
 
 (key-seq-define-global "yy" 'copy-to-register)
 (key-seq-define-global "vy" 'insert-register)
