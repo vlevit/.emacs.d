@@ -13,3 +13,6 @@
 [submodule "site-lisp/auto-dictionary-mode"]
 	path = site-lisp/auto-dictionary-mode
 	url = git@github.com:vlevit/auto-dictionary-mode.git
+[submodule "site-lisp/find-project"]
+	path = site-lisp/find-project
+	url = git@github.com:vlevit/find-project.el.git
