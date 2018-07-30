@@ -1,31 +1,30 @@
-(require 'ispell)
-(require 'flyspell)
+(require 'auto-dictionary)
 
-(setq ispell-program-name "aspell")
+;; (setq ispell-program-name "aspell")
 
-(add-to-list 'ispell-local-dictionary-alist
-             '("ru-yeyo" "[а-яА-Яё]" "[^а-яА-Яё]" "" t ("-d" "ru-yeyo") nil utf-8))
+;; (add-to-list 'ispell-local-dictionary-alist
+;;              '("ru-yeyo" "[а-яА-Яё]" "[^а-яА-Яё]" "" t ("-d" "ru-yeyo") nil utf-8))
+
+(setq flyspell-large-region 1000)
 
 (defun my-flyspell-mode-hook ()
   (unless (derived-mode-p 'sgml-mode)
-    (flyspell-mode 1)
-    (ispell-change-dictionary "ru-yeyo")
     ; flyspell hangs in mu4e-compose for some reason
-    (unless (derived-mode-p 'mu4e-compose-mode)
-      (flyspell-buffer))))
+    (flyspell-mode 1)
+    (auto-dictionary-mode 1)))
 
 (defun my-flyspell-prog-mode-hook ()
-  (flyspell-prog-mode)
-  (ispell-change-dictionary "english" nil))
+  (ispell-change-dictionary "english" nil)
+  (flyspell-prog-mode))
 
 (add-hook 'text-mode-hook 'my-flyspell-mode-hook)
-(add-hook 'rst-mode-hook 'my-flyspell-mode-hook)
-(add-hook 'markdown-mode-hook 'my-flyspell-mode-hook)
 
 (add-hook 'prog-mode-hook 'my-flyspell-prog-mode-hook)
 (add-hook 'sgml-mode-hook 'my-flyspell-prog-mode-hook)
 
 ;; http://sen-emacs-conf.googlecode.com/svn-history/r5/trunk/sen-defuns.el
+
+(add-hook 'flyspell-mode-hook (lambda () (auto-dictionary-mode 1)))
 
 (defun ispell-previous-error(arg)
   "Go to the arg previous spelling error in the buffer and use ispell
