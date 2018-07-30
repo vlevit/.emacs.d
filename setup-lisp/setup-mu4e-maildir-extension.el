@@ -1,5 +1,9 @@
 (require 'mu4e-maildirs-extension)
 
+(setq mu4e-maildirs-extension-hide-empty-maildirs nil)
+
+
+;; (setq mu4e-maildirs-extension-custom-list nil)
 (setq mu4e-maildirs-extension-custom-list
       '("/me/Inbox"
         "/me/Personal"
@@ -11,7 +15,22 @@
         "/me/Bulk"
         "/me/Junk"
         "/me/Trash"
+        "/me/SMS"
         "/me/Sent"
+
+        "/ironscales/*"
+        "/ironscales/Inbox"
+        "/ironscales/Alerts/*"
+        "/ironscales/Alerts/.AWS"
+        "/ironscales/Alerts/.DataDog"
+        "/ironscales/Alerts/.Sentry"
+        "/ironscales/Alerts/.Federation"
+        "/ironscales/Alerts/.Malicious"
+        "/ironscales/Alerts/.Mitigations"
+        "/ironscales/Alerts/.Attacks"
+        "/ironscales/Alerts/.Campaigns"
+        "/ironscales/Alerts/.Profiles"
+        "/ironscales/Sent Items"
 
         "/alex.dyadya/Inbox"
         "/spnest/Inbox"
@@ -19,7 +38,10 @@
         "/local"
 
         "/feeds/personal/*"
-        "/feeds/github/*"))
+        "/feeds/github"
+        "/feeds/twitter"
+        "/feeds/music/*"
+        ))
 
 (mu4e-maildirs-extension)
 

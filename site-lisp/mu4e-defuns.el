@@ -66,4 +66,10 @@
         (browse-url (get-text-property (- url-pos 1) 'shr-url))
       (message "URL not found"))))
 
+(defun mu4e-maildirs-extension-toggle-empty-maildirs ()
+  (interactive)
+  (setq mu4e-maildirs-extension-hide-empty-maildirs
+        (not mu4e-maildirs-extension-hide-empty-maildirs))
+  (revert-buffer))
+
 (provide 'mu4e-defuns)

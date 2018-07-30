@@ -12,6 +12,7 @@
       mu4e-headers-show-threads nil
       mu4e-headers-results-limit 50
       mu4e-view-html-plaintext-ratio-heuristic 10
+      mu4e-view-prefer-html t
       mu4e-view-show-addresses t
       mu4e-view-show-images t
       mu4e-html2text-command 'mu4e-shr2text
@@ -81,12 +82,14 @@
         ("/feeds/personal" . ?f)))
 
 (setq mu4e-bookmarks
-      '(("flag:unread AND NOT flag:trashed AND NOT maildir:/feeds/*" "Unread messages" ?u)
+      '(("maildir:/me/* AND NOT maildir:/me/Junk and not maildir:/me/Trash" "Inbox" ?i)
+        ("flag:unread AND NOT flag:trashed AND NOT maildir:/feeds/*" "Unread messages" ?u)
         ("date:today..now" "Today's messages" ?t)
         ("maildir:/me/* AND NOT maildir:/me/Sent AND NOT maildir:/me/Trash" "me" ?i)
         ("flag:unread AND maildir:/feeds/*" "Feeds" ?f)
         ("maildir:/feeds/*" "Feeds" ?F)
-        ("maildir:/Work OR maildir:/ironscales/*" "Work" ?w)))
+        ("maildir:/Work OR maildir:/ironscales/*" "Work" ?w)
+        ("flag:unread AND (maildir:/Work OR \"maildir:/ironscales\/(Inbox|.*AWS|.*New)/\")" "Work Inbox" ?r)))
 
 (add-to-list 'mu4e-view-actions
   '("ViewInBrowser" . mu4e-action-view-in-browser) t)
@@ -141,23 +144,16 @@
 
 (defvar my-mu4e-window-configuration nil)
 
-(defun my-mu4e ()
-  (interactive)
-  (unless (equal (buffer-name) " *mu4e-main*")
-    (window-configuration-to-register ?m))
-  (mu4e)
-  (follow-delete-other-windows-and-split))
-
 (defun my-mu4e-bury ()
   (interactive)
-  (jump-to-register ?m)
-  (bury-buffer " *mu4e-main*"))
+  (kill-buffer " *mu4e-main*"))
 
 (advice-add 'mu4e~headers-update-handler :before 'my-mu4e-update-handler)
 
 (define-key mu4e-headers-mode-map "r" 'mu4e-mark-as-read)
 (define-key mu4e-headers-mode-map "e" 'mu4e-headers-search-edit)
 (define-key mu4e-main-mode-map "q" 'my-mu4e-bury)
+(define-key mu4e-main-mode-map "G" 'mu4e-maildirs-extension-toggle-empty-maildirs)
 (define-key mu4e-view-mode-map "l" 'mu4e-view-toggle-plaintext)
 (define-key mu4e-view-mode-map (kbd "<tab>") 'shr-next-link)
 (define-key mu4e-view-mode-map "f" 'mu4e-shr-browse-last-url)
