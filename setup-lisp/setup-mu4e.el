@@ -10,7 +10,7 @@
       mu4e-attachment-dir "~/Attachments"
       mu4e-change-filenames-when-moving t
       mu4e-headers-show-threads nil
-      mu4e-headers-results-limit 50
+      mu4e-headers-results-limit 100
       mu4e-view-html-plaintext-ratio-heuristic 10
       mu4e-view-prefer-html t
       mu4e-view-show-addresses t
@@ -20,7 +20,13 @@
       mu4e-compose-signature "Sent with mu4e -> message-mode -> emacs -> msmtp -> postfix"
       mu4e-compose-signature-auto-include nil
       mu4e-compose-dont-reply-to-self t
-      mail-user-agent 'mu4e-user-agent)
+      mail-user-agent 'mu4e-user-agent
+      ;; include related significantly slows down search with many
+      ;; results
+      mu4e-headers-include-related nil
+      ;; speed up indexing
+      mu4e-index-lazy-check t
+      )
 
 (setq mu4e-sent-folder "/me/Sent"
       mu4e-trash-folder "/me/Trash"
@@ -89,7 +95,8 @@
         ("flag:unread AND maildir:/feeds/*" "Feeds" ?f)
         ("maildir:/feeds/*" "Feeds" ?F)
         ("maildir:/Work OR maildir:/ironscales/*" "Work" ?w)
-        ("flag:unread AND (maildir:/Work OR \"maildir:/ironscales\/(Inbox|.*AWS|.*New)/\")" "Work Inbox" ?r)))
+        ("flag:unread AND (maildir:/Work OR \"maildir:/ironscales\/(Inbox|.*AWS|.*New)/\")" "Work Inbox" ?r)
+        ("flag:unread AND \"maildir:/ironscales\/(BitBucket|Jira)/\"" "Work BitBucket / Jira" ?p)))
 
 (add-to-list 'mu4e-view-actions
   '("ViewInBrowser" . mu4e-action-view-in-browser) t)

@@ -24,12 +24,11 @@
         "/ironscales/Alerts/.AWS"
         "/ironscales/Alerts/.DataDog"
         "/ironscales/Alerts/.Sentry"
+        "/ironscales/Alerts/.Queues"
         "/ironscales/Alerts/.Federation"
         "/ironscales/Alerts/.Malicious"
         "/ironscales/Alerts/.Mitigations"
         "/ironscales/Alerts/.Attacks"
-        "/ironscales/Alerts/.Campaigns"
-        "/ironscales/Alerts/.Profiles"
         "/ironscales/Sent Items"
 
         "/alex.dyadya/Inbox"
