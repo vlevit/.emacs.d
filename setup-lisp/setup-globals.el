@@ -4,6 +4,8 @@
 (tool-bar-mode -1)                   ; turn off toolbar
 (scroll-bar-mode -1)                 ; turn off scrollbar
 (menu-bar-mode -1)                   ; turn off menubar
+;; hide Emacs title bar on X11
+(shell-command "xid=$(wmctrl -xl| awk '$3 == \"emacs.Emacs\" {print $1}' | tail -n 1); xprop -id ${xid} -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS \"0x2, 0x0, 0x0, 0x0, 0x0\"; wmctrl -i -a $xid")
 
 (setq visible-bell t)
 (set-default 'indicate-empty-lines t)
