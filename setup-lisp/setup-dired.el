@@ -12,11 +12,12 @@
   (xdg-open-file (dired-get-file-for-visit)))
 
 (defun xdg-open-file (filename)
-  "xdg-opens the specified file."
+  "xdg-open the specified file. Use gio open in fact. gio open
+works more reilably for some reason."
   (interactive "fFile to open: ")
   (if (string-equal system-type "windows-nt")
       (async-shell-command (concat "cygstart \"" filename "\""))
-    (async-shell-command (concat "setsid xdg-open \"" filename "\" &>/dev/null"))))
+    (async-shell-command (concat "setsid gio open \"" filename "\" &>/dev/null"))))
 
 (define-key dired-mode-map (kbd "E") 'dired-xdg-open-file)
 (define-key dired-mode-map (kbd "<S-return>") 'dired-xdg-open-file)
