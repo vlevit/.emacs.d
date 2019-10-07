@@ -12,6 +12,8 @@
   '(lambda () (interactive) (magit-visit-item 1) (other-window -1)))
 (define-key magit-mode-map (kbd "M-RET")
   '(lambda () (interactive) (magit-visit-item 1)))
+(define-key magit-blame-mode-map (kbd "M-w") nil)
+(define-key magit-revision-mode-map (kbd "M-w") nil)
 
 (key-seq-define magit-mode-map "`1" 'magit-show-level-1-all)
 (key-seq-define magit-mode-map "`2" 'magit-show-level-2-all)
