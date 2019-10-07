@@ -1,4 +1,4 @@
-(defun mu4e-mark-as-read()
+(defun my-mu4e-mark-as-read()
   (interactive)
   (let* ((msg (mu4e-message-at-point))
          (docid (mu4e-message-field msg :docid))
@@ -6,6 +6,16 @@
          (action (plist-get markdesc :action)))
     (funcall action docid nil nil)
     (mu4e-headers-next)))
+
+(defun my-mu4e-mark-as-junk()
+  (interactive)
+  (let* ((msg (mu4e-message-at-point))
+         (docid (mu4e-message-field msg :docid))
+         (markdesc (cdr (assq 'read mu4e-marks)))
+         (action (plist-get markdesc :action)))
+    (funcall action docid nil nil)
+    (mu4e~proc-move docid "/me/Junk" '(seen))))
+
 
 (defun mu4e-headers-jump-bookmark (kar)
   (interactive "c")
@@ -57,6 +67,25 @@
   (if (mu4e-view-plaintext-p mu4e~view-msg)
       (mu4e-view-html)
     (mu4e-view-plaintext)))
+
+(defun mu4e-shr2text-with-images ()
+  "The same as mu4e-shr2text but also retrieve and show remote
+images."
+  (interactive)
+  (let ((dom (libxml-parse-html-region (point-min) (point-max)))
+        ;; See this discussion on mu-discuss:
+        ;; https://groups.google.com/forum/#!topic/mu-discuss/gr1cwNNZnXo
+        (shr-inhibit-images nil))
+    (erase-buffer)
+    (shr-insert-document dom)
+    (goto-char (point-min))))
+
+(defun mu4e-view-toggle-images ()
+  (interactive)
+  (if (eq mu4e-html2text-command 'mu4e-shr2text-with-images)
+      (set (make-local-variable mu4e-html2text-command) 'mu4e-shr2text)
+    (set (make-local-variable mu4e-html2text-command) 'mu4e-shr2text-with-images))
+  (mu4e-view-refresh))
 
 (defun mu4e-shr-browse-last-url ()
   "Find URL nearest to the end of the buffer and browse it."

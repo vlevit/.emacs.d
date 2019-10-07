@@ -92,7 +92,7 @@
         ("flag:unread AND NOT flag:trashed AND NOT maildir:/feeds/*" "Unread messages" ?u)
         ("date:today..now" "Today's messages" ?t)
         ("maildir:/me/* AND NOT maildir:/me/Sent AND NOT maildir:/me/Trash" "me" ?i)
-        ("flag:unread AND maildir:/feeds/*" "Feeds" ?f)
+        ("flag:unread AND maildir:/feeds/* AND NOT subject:\"Error while fetching\"" "Feeds" ?f)
         ("maildir:/feeds/*" "Feeds" ?F)
         ("maildir:/Work OR maildir:/ironscales/*" "Work" ?w)
         ("flag:unread AND (maildir:/Work OR \"maildir:/ironscales\/(Inbox|.*AWS|.*New)/\")" "Work Inbox" ?r)
@@ -155,9 +155,10 @@
   (interactive)
   (kill-buffer " *mu4e-main*"))
 
-(advice-add 'mu4e~headers-update-handler :before 'my-mu4e-update-handler)
+;; (advice-add 'mu4e~headers-update-handler :before 'my-mu4e-update-handler)
 
-(define-key mu4e-headers-mode-map "r" 'mu4e-mark-as-read)
+(define-key mu4e-headers-mode-map "r" 'my-mu4e-mark-as-read)
+(define-key mu4e-headers-mode-map "J" 'my-mu4e-mark-as-junk)
 (define-key mu4e-headers-mode-map "e" 'mu4e-headers-search-edit)
 (define-key mu4e-main-mode-map "q" 'my-mu4e-bury)
 (define-key mu4e-main-mode-map "G" 'mu4e-maildirs-extension-toggle-empty-maildirs)
