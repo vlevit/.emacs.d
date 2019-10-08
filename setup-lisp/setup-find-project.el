@@ -2,6 +2,7 @@
 
 (setq find-project-patterns
       '((:pattern "~/.config" :action find-file-in-repository)
+        (:pattern "~/bin" :action find-file-in-repository)
         "~/.emacs.d"
         "~/.oh-my-zsh"
         "~/.emacs.d/site-lisp/*"
