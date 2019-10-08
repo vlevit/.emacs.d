@@ -20,7 +20,7 @@
 
         "/ironscales/*"
         "/ironscales/Inbox"
-        "/ironscales/Alerts/*"
+        ;; "/ironscales/Alerts/*"
         "/ironscales/Alerts/.AWS"
         "/ironscales/Alerts/.DataDog"
         "/ironscales/Alerts/.Sentry"
@@ -44,12 +44,11 @@
 
 (mu4e-maildirs-extension)
 
-(defun my-mu4e-maildirs-update ()
-  "Clear cache and insert maildirs summary."
-  (setq mu4e-maildirs-extension-cached-maildirs-data nil)
-  (mu4e-maildirs-extension-update))
-
 (define-key mu4e-main-mode-map "p"
   '(lambda () (interactive) (mu4e-maildirs-extension-force-update '(16))))
+
+;; limit to 1000 results
+(setq mu4e-maildirs-extension-count-command-format
+      (concat mu4e-mu-binary " find %s -n 1000 --fields 'i' | wc -l"))
 
 (provide 'setup-mu4e-maildir-extension)
